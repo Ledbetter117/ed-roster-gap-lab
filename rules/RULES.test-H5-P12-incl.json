@@ -1,0 +1,48 @@
+{
+ "source": "TEST-ONLY CONSTRUCTED rule set (annex A1, HYPOTHETICAL P=12). HYPOTHETICAL example values; never used for measurement and not a clinical rule.",
+ "rules": {
+  "H1": {
+   "status": "LOW",
+   "params": {
+    "min_rn_by_band": {
+     "low": null,
+     "normal": null,
+     "high": null,
+     "surge": null
+    },
+    "charge_counts_toward_h1": null,
+    "missing_band_policy": null
+   }
+  },
+  "H2": {
+   "status": "LOW",
+   "params": {}
+  },
+  "H4": {
+   "status": "LOW",
+   "params": {
+    "allowed_exceptions": null
+   }
+  },
+  "H5": {
+   "status": "HIGH",
+   "params": {
+    "min_rest_hours": 12,
+    "boundary_inclusive": true,
+    "day_after_night_forbidden": false
+   }
+  },
+  "H6": {
+   "status": "LOW",
+   "params": {
+    "max_consecutive_shifts": null
+   }
+  },
+  "H9": {
+   "status": "LOW",
+   "params": {
+    "not_separate_places": null
+   }
+  }
+ }
+}

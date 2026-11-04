@@ -1,0 +1,101 @@
+{
+ "provenance": {
+  "synthetic": true,
+  "generator": "make_fixtures.py (CONSTRUCTED)",
+  "seed": null,
+  "fixture": "H4 exception"
+ },
+ "staff": [
+  {
+   "staff_id": "S01",
+   "role": "RN",
+   "qualifications": [
+    "charge"
+   ]
+  },
+  {
+   "staff_id": "S02",
+   "role": "RN",
+   "qualifications": []
+  },
+  {
+   "staff_id": "S03",
+   "role": "RN",
+   "qualifications": []
+  },
+  {
+   "staff_id": "S04",
+   "role": "RN",
+   "qualifications": [
+    "charge"
+   ]
+  },
+  {
+   "staff_id": "S05",
+   "role": "RN",
+   "qualifications": []
+  }
+ ],
+ "shifts": [
+  {
+   "shift": "DAY",
+   "start_hour": 7,
+   "end_hour": 19
+  },
+  {
+   "shift": "NIGHT",
+   "start_hour": 19,
+   "end_hour": 7
+  }
+ ],
+ "dates": [
+  "D01"
+ ],
+ "context": [
+  {
+   "date": "D01",
+   "shift": "DAY",
+   "census_band": "normal"
+  },
+  {
+   "date": "D01",
+   "shift": "NIGHT",
+   "census_band": "normal"
+  }
+ ],
+ "availability": [
+  {
+   "staff_id": "S02",
+   "date": "D01",
+   "shift": "DAY",
+   "status": "UNAVAILABLE"
+  }
+ ],
+ "assignments": [
+  {
+   "staff_id": "S01",
+   "date": "D01",
+   "shift": "DAY",
+   "place": "ED"
+  },
+  {
+   "staff_id": "S02",
+   "date": "D01",
+   "shift": "DAY",
+   "place": "ED",
+   "exception": "mandation"
+  },
+  {
+   "staff_id": "S04",
+   "date": "D01",
+   "shift": "NIGHT",
+   "place": "ED"
+  },
+  {
+   "staff_id": "S03",
+   "date": "D01",
+   "shift": "NIGHT",
+   "place": "ED"
+  }
+ ]
+}

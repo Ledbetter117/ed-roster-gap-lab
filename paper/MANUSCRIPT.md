@@ -1,0 +1,103 @@
+# ED Roster Gap Lab: software validation and a protocol for blinded agreement with one human rater
+
+Galen Coulter-Ledbetter
+
+Software and protocol report · 3 November 2026 · Version 0.1.0
+
+**Study status: no human agreement result is available.** This report describes implemented software, its tests, a synthetic demonstration, and a protocol for completing the original human-label endpoint. It is not a report of clinical validation.
+
+## Abstract
+
+A rule checker can implement its specification correctly without showing that the specification captures a clinician's judgment. ED Roster Gap Lab separates those questions in a Python workbench for synthetic emergency-department rosters. It checks explicit constraints, seals outputs before issuing a facts-only label sheet, locks labels before unblinding, and reports agreement with uncertainty estimated by resampling whole rosters. Verification produced 98 passing checks and caught all 42 active planted defects. A demonstration used 12 generated rosters, 7 days, and both shifts (168 units), with hypothetical rules and a simulated heuristic rater. Two combined parameter branches yielded raw agreement of 0.622 and 0.359 after excluding unsure labels. These are pipeline outputs, not observations of human judgment. The original study still requires reviewed human rules, a frozen protocol, and genuine blinded labels. The contribution is inspectable software and an explicit path from formal rule tests to a bounded one-rater agreement study.
+
+**Keywords:** synthetic rosters; rule checking; agreement; reproducibility; software verification; study protocol
+
+## 1. Purpose and scope
+
+The target question is specific: on a frozen synthetic roster set, how often does a deterministic detector agree with the founder's own assessment of whether a shift has a staffing gap? Constructed examples can establish whether software applies its declared rules. They cannot establish agreement with a human whose judgments have not been collected.
+
+The project supplies a rule checker, a reproducible generator for measurement inputs, a sealing and label-locking workflow, and tests of those mechanisms. It does not optimize schedules, recommend a staffing ratio, repair rosters, integrate with employer systems, or evaluate patient outcomes. The original endpoint remains an agreement report with an interval. The present software report is an intermediate deliverable, not a replacement endpoint.
+
+This work does not claim a new general connection between prediction errors and downstream decisions. Smart “Predict, then Optimize” explicitly distinguishes decision error from prediction error [1]. No solver or prediction model from that framework is evaluated here. Nor does this report assert that no prior roster-checking system exists: it is not an exhaustive novelty review. Its intended use is reproducible technical inspection and preparation of a small, bounded study.
+
+## 2. Software design
+
+### 2.1 Input and rules
+
+Input JSON contains a synthetic-provenance declaration, staff tokens, day indices, shifts, assignments, availability, and census-band context. Identifier restrictions are not proof of de-identification. A rule runs when its status is MED or HIGH and required parameters are present. The founder template leaves all rules LOW and returns NOT_RUN. Status values are file declarations, not authenticated clinical approvals.
+
+Executable checks cover census-band RN minima (H1), charge-qualified presence (H2), assignments contrary to availability (H4), end-to-start rest and an optional day-after-night prohibition (H5), consecutive work (H6), and same-block placement conflicts (H9). H6 can count calendar days or shifts within consecutive-day runs. A limited hypothetical H8 branch checks orientee/preceptor pairing and excludes orientees from H1. H3, H7, and H10 remain interfaces only; competency, FTE, and contract rules are not fully implemented.
+
+Findings identify their rule and location. Duplicate assignments and cross-block overlaps are separate notes. Specified unsatisfiability signals are not a complete feasibility solver. Carry-in dates can contribute temporal context without receiving findings. With no finding, a globally skipped ratified rule makes a unit not evaluated rather than no-gap.
+
+### 2.2 Frozen records and ordering
+
+The sequence is make-set, seal, label-sheet, lock-labels, agreement. Generation requires a new directory and hashes every roster. The seal records rules, detector, kit, and output hashes before labels exist. The sheet records its preceding seal. The lock requires every expected unit exactly once and records the filled-label hash. Scoring refuses changed labels and sealed outputs. A new seal after sheet issuance is refused. The documented launcher checks a release manifest before and after all commands.
+
+These controls expose accidental drift and sequence errors; they are not access controls. The local user can open sealed outputs or rewrite a manifest, and a rater name cannot establish who labeled a file. Real study reporting must record deviations and accidental unblinding honestly.
+
+### 2.3 Synthetic demonstration
+
+The generator settings are explicit in `measure/ii_measure.py`: staffing targets, availability, census-band weights, and structural perturbations are hypothetical. Perturbations include charge removal, one person short, unavailable assignments, back-to-back assignments, and double booking. Generator intent is saved separately and never used as reference truth.
+
+Both demonstration branches use the same fixed-seed rosters and simulated labels. Branch A treats rest equal to the minimum as legal and counts calendar days. Branch B treats equality as a violation and counts shifts. Both details change together, so their separate effects cannot be identified. The heuristic rater labels a unit gap when facts show no charge nurse or zero hours of rest, and labels a seeded selection unsure. It is not a model of the founder's judgment.
+
+## 3. Measurement method and future protocol
+
+A unit is a roster/day/shift. A located finding maps a shift to gap; a day-level H6 finding maps both shifts. No-finding units with incomplete ratified checks are excluded as not evaluated and counted. Before labeling, the human must choose rule values, unit scope, unsure policy, generator settings, N, seed, primary statistic, and threshold. The draft protocol intentionally leaves these fields unset.
+
+Raw agreement is the proportion of matching classifications. Cohen's kappa is secondary [2], computed from observed and marginal expected agreement. Warrens provides a primary treatment of chance correction for binary tables [3]. Sensitivity and specificity compare against this rater, not clinical truth. The exclude policy removes unsure units; the disagree sensitivity policy counts them against agreement. Under disagree, kappa, sensitivity, and specificity still use only definite labels. Policy-assigned confusion-table mismatches are not additional human judgments.
+
+The interval uses 5000 percentile bootstrap resamples of whole rosters with replacement. All scored units from each selected roster are retained, and agreement is unit-weighted. Cluster resampling represents the intended dependence structure, but its inferential behavior depends on model assumptions [4]. This implementation has no study-specific coverage calibration; few rosters limit precision. The Wilson reachability output ignores clustering and is a planning illustration, not a power calculation.
+
+For the actual study, the founder reviews the encoded rules, freezes the protocol, and labels a new set without opening sealed outputs. The primary file is locked before unblinding. Reporting must include exclusions, the contingency table, agreement, interval, secondary measures, deviations, and the outcome against the prespecified threshold. No rosters are added after inspecting results. Any resulting claim is limited to this person, these rules, and this synthetic set.
+
+## 4. Verification and demonstration outputs
+
+Saved local verification used 3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]. Four suites covered detector behavior, measurement controls, successor regressions, and release safeguards. Every planted defect had to trigger its named checks; missing summaries, void mutants, and uncaught mutants prevent PASS. Two obsolete legacy entries were removed from active accounting because successor H6 and clock controls already replace them. Tests ran on a temporary copy, with source integrity checked before and after execution.
+
+Table 1. Local software checks; constructed inputs only.
+
+| Check group | Passed/caught | Failed/uncaught |
+|---|---:|---:|
+| test_gapcheck.py | 29 | 0 |
+| test_measure.py | 26 | 0 |
+| test_gapcheck_r12.py | 22 | 0 |
+| test_release.py | 21 | 0 |
+| mutation_gapcheck.py | 14/14 | 0 |
+| mutation_measure.py | 18/18 | 0 |
+| mutation_gapcheck_r12.py | 10/10 | 0 |
+
+The demonstration has 168 units, including 12 simulated unsure labels. Table 2 is generated from the same saved run as the public JSON. It describes software behavior only.
+
+Table 2. Synthetic pipeline outputs; SIMULATED rater only.
+
+| Branch | Unsure policy | Scored units | Agreement | 95% roster interval | Kappa |
+|---|---|---:|---:|---|---:|
+| A | exclude | 156 | 0.622 | 0.528–0.702 | 0.296 |
+| A | disagree | 168 | 0.577 | 0.488–0.661 | 0.296 |
+| B | exclude | 156 | 0.359 | 0.300–0.416 | 0.091 |
+| B | disagree | 168 | 0.333 | 0.274–0.393 | 0.091 |
+
+After excluding unsure units, changing both details moves simulated agreement by 26.3 percentage points. This demonstrates sensitivity to definitions on this constructed distribution. It does not establish that either definition is clinically correct, estimate human agreement, or show improved staffing. The seed, rule settings, simulated-label procedure, and scoring code are supplied for reproduction.
+
+## 5. Corrections and threats to validity
+
+Release preparation exposed concrete defects in the earlier workbench: integrity drift was printed without blocking execution; legacy mutation programs could return success despite missed or void mutants; generation could overwrite a frozen directory; and globally skipped ratified rules could leave units scored as no-gap. Independent review also found that a non-RN carrying a charge tag could satisfy H2; charge eligibility now requires the RN role and the qualification. This edition enforces those cases and adds regression checks. These repairs strengthen the instrument without validating its clinical abstraction.
+
+The intended study has one rater who also specifies the rules. Agreement may reflect consistency with that person's own formalization. The facts sheet exposes variables used by the rules and can cue judgments. Synthetic prevalence affects agreement and kappa. The demo uses one seed, a heuristic based on visible facts, few clusters, and two simultaneously changed parameters. There are no genuine founder labels, second rater, adjudication, time-saving trials, patient outcomes, or external deployment results.
+
+Passing tests establish behavior on named constructed cases and planted defects, not absence of all bugs. H3/H7/H10 are unimplemented, and H8 remains a limited hypothetical branch. The token checks are not a general sensitive-data filter. No clinical or production-use claim follows from this report.
+
+## 6. Availability and next empirical step
+
+This report accompanies the source, constructed fixtures, rules, tests, demo, methods, limitations, and generated JSON. Python's standard library is sufficient; no model service, model download, or paid call is needed. `python -B run_ed_ii.py demo` and `python -B run_ed_ii.py checks` reproduce software runs. `tools/render_evidence.py` generates numeric tables and this manuscript from their outputs. Source and documentation are MIT licensed. A provided CI matrix becomes cross-platform evidence only when its remote runs are observed.
+
+AI assistance was used in implementation, review, and drafting. No AI output is presented as a founder decision or human label. The human author is responsible for final claims and for the missing judgments. The next empirical step is reviewed rules and a frozen protocol, followed by genuine blinded labeling. Until then, the original agreement endpoint is pending.
+
+## References
+
+1. Elmachtoub AN, Grigas P. Smart “Predict, then Optimize.” *Management Science*. 2022;68(1):9–26. [doi:10.1287/mnsc.2020.3922](https://doi.org/10.1287/mnsc.2020.3922). Primary article inspected via the [NSF-hosted version](https://par.nsf.gov/servlets/purl/10339524).
+2. Cohen J. A coefficient of agreement for nominal scales. *Educational and Psychological Measurement*. 1960;20(1):37–46. [doi:10.1177/001316446002000104](https://journals.sagepub.com/doi/abs/10.1177/001316446002000104). Publisher bibliographic record checked; original full text was not retrieved.
+3. Warrens MJ. On similarity coefficients for 2×2 tables and correction for chance. *Psychometrika*. 2008;73:487–502. [Primary full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC2792365/).
+4. Field CA, Welsh AH. Bootstrapping clustered data. *Journal of the Royal Statistical Society: Series B*. 2007;69(3):369–390. [doi:10.1111/j.1467-9868.2007.00593.x](https://doi.org/10.1111/j.1467-9868.2007.00593.x). Publisher abstract and metadata checked; no study-specific coverage claim is inferred.

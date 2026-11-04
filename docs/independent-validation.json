@@ -1,0 +1,223 @@
+{
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "suites": {
+    "test_gapcheck.py": {
+      "exit": 0,
+      "seconds": 0.4,
+      "pass": 29,
+      "fail": 0
+    },
+    "test_measure.py": {
+      "exit": 0,
+      "seconds": 0.8,
+      "pass": 26,
+      "fail": 0
+    },
+    "test_gapcheck_r12.py": {
+      "exit": 0,
+      "seconds": 0.2,
+      "pass": 22,
+      "fail": 0
+    },
+    "test_release.py": {
+      "exit": 0,
+      "seconds": 0.4,
+      "pass": 21,
+      "fail": 0
+    }
+  },
+  "mutations": {
+    "mutation_gapcheck.py": {
+      "exit": 0,
+      "seconds": 7.0,
+      "summary_lines": [
+        "D15 a missing named input reported as no input -> CAUGHT ['CLI']",
+        "D16 the no-charge-staff note removed -> CAUGHT ['U-1']",
+        "14/14 caught, 0 void"
+      ],
+      "total": 14,
+      "caught": 14,
+      "all_caught": true
+    },
+    "mutation_measure.py": {
+      "exit": 0,
+      "seconds": 15.7,
+      "summary_lines": [
+        "K17 the generator draws blocks independently again (accidental back-to-backs) -> CAUGHT ['M23'] ",
+        "K18 a sheet from another set accepted at the lock -> CAUGHT ['M25'] ",
+        "18/18 caught, 0 void"
+      ],
+      "total": 18,
+      "caught": 18,
+      "all_caught": true
+    },
+    "mutation_gapcheck_r12.py": {
+      "exit": 0,
+      "seconds": 3.1,
+      "summary_lines": [
+        "D9b H6 off by one (the 1.1 mutant D9 is void on 1.2: its line was rewritten) -> CAUGHT ['R5-exceed']",
+        "D12 a timestamp in the output -> CAUGHT ['DET-clock']",
+        "10/10 caught, 0 void"
+      ],
+      "total": 10,
+      "caught": 10,
+      "all_caught": true
+    }
+  },
+  "verdict": "PASS",
+  "review_type": "Separate Codex agent in the same model family; not human or cross-family validation",
+  "additional_probes": [
+    {
+      "name": "H3-HIGH-mapping",
+      "pass": true
+    },
+    {
+      "name": "H3-LOW-mapping",
+      "pass": true
+    },
+    {
+      "name": "H3-KILLED-mapping",
+      "pass": true
+    },
+    {
+      "name": "H7-HIGH-mapping",
+      "pass": true
+    },
+    {
+      "name": "H7-LOW-mapping",
+      "pass": true
+    },
+    {
+      "name": "H7-KILLED-mapping",
+      "pass": true
+    },
+    {
+      "name": "H8-HIGH-mapping",
+      "pass": true
+    },
+    {
+      "name": "H8-LOW-mapping",
+      "pass": true
+    },
+    {
+      "name": "H8-KILLED-mapping",
+      "pass": true
+    },
+    {
+      "name": "H10-HIGH-mapping",
+      "pass": true
+    },
+    {
+      "name": "H10-LOW-mapping",
+      "pass": true
+    },
+    {
+      "name": "H10-KILLED-mapping",
+      "pass": true
+    },
+    {
+      "name": "H5-HIGH-mapping",
+      "pass": true
+    },
+    {
+      "name": "H5-LOW-mapping",
+      "pass": true
+    },
+    {
+      "name": "H5-KILLED-mapping",
+      "pass": true
+    },
+    {
+      "name": "supported-finding-retains-gap-despite-incomplete-rule",
+      "pass": true
+    },
+    {
+      "name": "block-skip-only-affects-nights",
+      "pass": true
+    },
+    {
+      "name": "H2-requires-RN-not-only-charge-tag",
+      "pass": true
+    },
+    {
+      "name": "existing-frozen-set-refused",
+      "pass": true
+    },
+    {
+      "name": "frozen-bytes-preserved",
+      "pass": true
+    },
+    {
+      "name": "sheet-before-seal-refused",
+      "pass": true
+    },
+    {
+      "name": "reseal-after-sheet-refused",
+      "pass": true
+    },
+    {
+      "name": "simulated-labels-cannot-score-human-result",
+      "pass": true
+    },
+    {
+      "name": "simulated-result-marked-pipeline-test",
+      "pass": true
+    },
+    {
+      "name": "relock-refused",
+      "pass": true
+    },
+    {
+      "name": "edited-locked-labels-refused",
+      "pass": true
+    }
+  ],
+  "runner_enforcement": [
+    {
+      "case": "clean",
+      "exit": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "case": "missing-suite-summary",
+      "exit": 1,
+      "expected": 1,
+      "pass": true
+    },
+    {
+      "case": "failed-suite",
+      "exit": 1,
+      "expected": 1,
+      "pass": true
+    },
+    {
+      "case": "uncaught-mutant",
+      "exit": 1,
+      "expected": 1,
+      "pass": true
+    },
+    {
+      "case": "void-mutant",
+      "exit": 1,
+      "expected": 1,
+      "pass": true
+    },
+    {
+      "case": "empty-mutants",
+      "exit": 1,
+      "expected": 1,
+      "pass": true
+    },
+    {
+      "case": "nonzero-mutation",
+      "exit": 1,
+      "expected": 1,
+      "pass": true
+    }
+  ],
+  "independent_report_sha256": "54593c6a051ed7f713e414588d31e7f4b7708fc1078a66d9e7fd2ff54e641cea",
+  "raw_suite_sha256": "fb0da0be84f12340e088a1879e69f905b8c673d3fed582d7afe6d57b601b4489",
+  "reviewed_manuscript_sha256": "606fa9fcd175fd92f5c572ddd403d3f9546db9d989eb9d1d5f21f74a42e0f53b",
+  "boundaries": "No clinical validation, human labels, exhaustive hostile-input audit, or remote CI/publication claim."
+}

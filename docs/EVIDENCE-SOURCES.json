@@ -1,0 +1,40 @@
+{
+  "evidence_type": "SYNTHETIC SOFTWARE CHECK; NOT A HUMAN STUDY",
+  "raw_demo_sha256": "bef1d257de9c8c375d04e0f7c2721c6d5fbd360cdb3ab81e0b5d6ab97dd4c339",
+  "raw_checks_sha256": "fcc518e2209ccff8c7f1431544ebe696cee0c872070542a78bcbdf981a182c90",
+  "set_manifest_sha256": [
+    "922a9b595d88d7580c5e4175b7348172cf87872f5860d32c04e71786752705e8",
+    "922a9b595d88d7580c5e4175b7348172cf87872f5860d32c04e71786752705e8"
+  ],
+  "source_sha256": {
+    "demo/run_demo.py": "791098b74f728b414c2ff08a072d89ae0d97bc1267e77d07cf045e5623ab157e",
+    "detector/gapcheck.py": "76ad7cd60805a7307ea37fa876673f3bbe1af515bae750a2f583d4a24d9dcc15",
+    "detector/make_fixtures.py": "36c8f03314d2ff8f61e379e19fe4defb3f4177a7913cb4c1657e9d7a77b59f4e",
+    "measure/ii_measure.py": "fac07b5f4975f49614612051ba2ac88df694ca5752365e682f1fa4eb7b4a6e82",
+    "run_ed_ii.py": "57d4c7b24d5260769a8fe6ae303a30f56f5d29fe69ebaa27913f2c4da87e0f19",
+    "tests/mutation_gapcheck.py": "df630479d78df89ce57237b5998d191a2b9d2e3535a3927162ed8328d4dc3024",
+    "tests/mutation_gapcheck_r12.py": "17a41e4bf21245da839883626e0f54806072174004c235f990d70088a7f736b7",
+    "tests/mutation_measure.py": "bc170e0c7d71add93bf1b8e2b203867da1a70b7fc293164cfa1fd3ad8eb7f4fd",
+    "tests/test_gapcheck.py": "61b25465fe387f56c6009dde182ac72b42027059147927299d6ff9ad6abcc0b2",
+    "tests/test_gapcheck_r12.py": "0c2a17fddc1c95e79bda0c80c4460bc0dea61bac36e67bd9134ab14dc4e35c10",
+    "tests/test_measure.py": "fd0927a7dee81721fb7f21d01446c36441c60445fb49dc39761566594aea793e",
+    "tests/test_release.py": "798e94ce3b56c0adf06b8df89e360d91198a648fdb2845d7a9b47fa3b563d101",
+    "tools/build_manifest.py": "96bff8aac7dc42fd7f334e71a6d10d96e596add4ade3417a7475dc995746249f",
+    "tools/render_evidence.py": "b2e8a8e4862180bc692eac603ca9759494d10c89300c5114dc892f3da4988915",
+    "tools/render_paper.py": "a624b704a617005d13945f9558417418a80291ba60f63aefd8c758f518913387",
+    "tools/run_track_ii_checks.py": "7b355a173276b1da61afab01bc74bac3b90ec8848262fbccaebef6dc5c7c3f68"
+  },
+  "post_check_publication_changes": {
+    "files": [
+      {
+        "path": "tools/render_paper.py",
+        "checked_sha256": "a624b704a617005d13945f9558417418a80291ba60f63aefd8c758f518913387",
+        "publication_sha256": "925c1533f85e878117dc4000c17cca9715119e6224f4a4768a8f88417a59bba0"
+      }
+    ],
+    "reason": "Optional PDF renderer: keep table captions with their tables. Evaluation, tests, measurement and demo source unchanged.",
+    "validation": "Root rendered final manuscript PDF and visually inspected all 5 pages after this layout-only change. No full evaluation rerun required for PDF layout.",
+    "manuscript_sha256": "606fa9fcd175fd92f5c572ddd403d3f9546db9d989eb9d1d5f21f74a42e0f53b",
+    "pdf_sha256": "eed90e8d6a8bc234f789cdfaa53a31b436f87e3dc0321e3465428edea116211c"
+  }
+}

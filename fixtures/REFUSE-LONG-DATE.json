@@ -1,0 +1,57 @@
+{
+ "provenance": {
+  "synthetic": true,
+  "generator": "make_fixtures.py (CONSTRUCTED)",
+  "seed": null,
+  "fixture": "calendar date behind the D"
+ },
+ "staff": [
+  {
+   "staff_id": "S01",
+   "role": "RN",
+   "qualifications": [
+    "charge"
+   ]
+  },
+  {
+   "staff_id": "S02",
+   "role": "RN",
+   "qualifications": []
+  },
+  {
+   "staff_id": "S03",
+   "role": "RN",
+   "qualifications": []
+  },
+  {
+   "staff_id": "S04",
+   "role": "RN",
+   "qualifications": [
+    "charge"
+   ]
+  },
+  {
+   "staff_id": "S05",
+   "role": "RN",
+   "qualifications": []
+  }
+ ],
+ "shifts": [
+  {
+   "shift": "DAY",
+   "start_hour": 7,
+   "end_hour": 19
+  },
+  {
+   "shift": "NIGHT",
+   "start_hour": 19,
+   "end_hour": 7
+  }
+ ],
+ "dates": [
+  "D20261030"
+ ],
+ "context": [],
+ "availability": [],
+ "assignments": []
+}

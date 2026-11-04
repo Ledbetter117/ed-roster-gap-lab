@@ -1,0 +1,87 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "suites": {
+    "test_gapcheck.py": {
+      "exit": 0,
+      "seconds": 0.4,
+      "pass": 29,
+      "fail": 0
+    },
+    "test_measure.py": {
+      "exit": 0,
+      "seconds": 0.8,
+      "pass": 26,
+      "fail": 0
+    },
+    "test_gapcheck_r12.py": {
+      "exit": 0,
+      "seconds": 0.4,
+      "pass": 22,
+      "fail": 0
+    },
+    "test_release.py": {
+      "exit": 0,
+      "seconds": 0.4,
+      "pass": 21,
+      "fail": 0
+    }
+  },
+  "mutations": {
+    "mutation_gapcheck.py": {
+      "exit": 0,
+      "seconds": 7.2,
+      "summary_lines": [
+        "D15 a missing named input reported as no input -> CAUGHT ['CLI']",
+        "D16 the no-charge-staff note removed -> CAUGHT ['U-1']",
+        "14/14 caught, 0 void"
+      ],
+      "total": 14,
+      "caught": 14,
+      "all_caught": true
+    },
+    "mutation_measure.py": {
+      "exit": 0,
+      "seconds": 16.3,
+      "summary_lines": [
+        "K17 the generator draws blocks independently again (accidental back-to-backs) -> CAUGHT ['M23'] ",
+        "K18 a sheet from another set accepted at the lock -> CAUGHT ['M25'] ",
+        "18/18 caught, 0 void"
+      ],
+      "total": 18,
+      "caught": 18,
+      "all_caught": true
+    },
+    "mutation_gapcheck_r12.py": {
+      "exit": 0,
+      "seconds": 4.2,
+      "summary_lines": [
+        "D9b H6 off by one (the 1.1 mutant D9 is void on 1.2: its line was rewritten) -> CAUGHT ['R5-exceed']",
+        "D12 a timestamp in the output -> CAUGHT ['DET-clock']",
+        "10/10 caught, 0 void"
+      ],
+      "total": 10,
+      "caught": 10,
+      "all_caught": true
+    }
+  },
+  "source_sha256": {
+    "demo/run_demo.py": "791098b74f728b414c2ff08a072d89ae0d97bc1267e77d07cf045e5623ab157e",
+    "detector/gapcheck.py": "76ad7cd60805a7307ea37fa876673f3bbe1af515bae750a2f583d4a24d9dcc15",
+    "detector/make_fixtures.py": "36c8f03314d2ff8f61e379e19fe4defb3f4177a7913cb4c1657e9d7a77b59f4e",
+    "measure/ii_measure.py": "fac07b5f4975f49614612051ba2ac88df694ca5752365e682f1fa4eb7b4a6e82",
+    "run_ed_ii.py": "57d4c7b24d5260769a8fe6ae303a30f56f5d29fe69ebaa27913f2c4da87e0f19",
+    "tests/mutation_gapcheck.py": "df630479d78df89ce57237b5998d191a2b9d2e3535a3927162ed8328d4dc3024",
+    "tests/mutation_gapcheck_r12.py": "17a41e4bf21245da839883626e0f54806072174004c235f990d70088a7f736b7",
+    "tests/mutation_measure.py": "bc170e0c7d71add93bf1b8e2b203867da1a70b7fc293164cfa1fd3ad8eb7f4fd",
+    "tests/test_gapcheck.py": "61b25465fe387f56c6009dde182ac72b42027059147927299d6ff9ad6abcc0b2",
+    "tests/test_gapcheck_r12.py": "0c2a17fddc1c95e79bda0c80c4460bc0dea61bac36e67bd9134ab14dc4e35c10",
+    "tests/test_measure.py": "fd0927a7dee81721fb7f21d01446c36441c60445fb49dc39761566594aea793e",
+    "tests/test_release.py": "798e94ce3b56c0adf06b8df89e360d91198a648fdb2845d7a9b47fa3b563d101",
+    "tools/build_manifest.py": "96bff8aac7dc42fd7f334e71a6d10d96e596add4ade3417a7475dc995746249f",
+    "tools/render_evidence.py": "b2e8a8e4862180bc692eac603ca9759494d10c89300c5114dc892f3da4988915",
+    "tools/render_paper.py": "a624b704a617005d13945f9558417418a80291ba60f63aefd8c758f518913387",
+    "tools/run_track_ii_checks.py": "7b355a173276b1da61afab01bc74bac3b90ec8848262fbccaebef6dc5c7c3f68"
+  },
+  "verdict": "PASS",
+  "platform": "Windows"
+}

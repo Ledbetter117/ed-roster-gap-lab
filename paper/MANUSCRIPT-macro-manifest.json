@@ -1,0 +1,199 @@
+{
+  "macros": [
+    {
+      "name": "check_total",
+      "value": 98,
+      "classification": "TRACED",
+      "source_chain": "docs/validation-results.json:suites.*.pass summed; tools/run_track_ii_checks.py -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 11,
+          "context": "A rule checker can implement its specification correctly without showing that the specification captures a clinician's judgment. ED Roster Gap Lab separates those questions in a Python workbench for s"
+        }
+      ]
+    },
+    {
+      "name": "mutant_total",
+      "value": 42,
+      "classification": "TRACED",
+      "source_chain": "docs/validation-results.json:mutations.*.total summed; mutation test scripts -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 11,
+          "context": "A rule checker can implement its specification correctly without showing that the specification captures a clinician's judgment. ED Roster Gap Lab separates those questions in a Python workbench for s"
+        }
+      ]
+    },
+    {
+      "name": "rosters",
+      "value": 12,
+      "classification": "TRACED",
+      "source_chain": "frozen SET-MANIFEST.json:n_rosters; measure/ii_measure.py::make_set -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 11,
+          "context": "A rule checker can implement its specification correctly without showing that the specification captures a clinician's judgment. ED Roster Gap Lab separates those questions in a Python workbench for s"
+        }
+      ]
+    },
+    {
+      "name": "days",
+      "value": 7,
+      "classification": "TRACED",
+      "source_chain": "frozen SET-MANIFEST.json:days; measure/ii_measure.py::make_set -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 11,
+          "context": "A rule checker can implement its specification correctly without showing that the specification captures a clinician's judgment. ED Roster Gap Lab separates those questions in a Python workbench for s"
+        }
+      ]
+    },
+    {
+      "name": "units",
+      "value": 168,
+      "classification": "TRACED",
+      "source_chain": "frozen SET-MANIFEST.json:n_units; measure/ii_measure.py::make_set -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 11,
+          "context": "A rule checker can implement its specification correctly without showing that the specification captures a clinician's judgment. ED Roster Gap Lab separates those questions in a Python workbench for s"
+        },
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 61,
+          "context": "The demonstration has {{units}} units, including {{unsure}} simulated unsure labels. Table 2 is generated from the same saved run as the public JSON. It describes software behavior only."
+        }
+      ]
+    },
+    {
+      "name": "agreement_a",
+      "value": "0.622",
+      "classification": "TRACED",
+      "source_chain": "docs/demo-results.json:A-inclusive-calendar-day.exclude.agreement; measure/ii_measure.py::agreement -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 11,
+          "context": "A rule checker can implement its specification correctly without showing that the specification captures a clinician's judgment. ED Roster Gap Lab separates those questions in a Python workbench for s"
+        }
+      ]
+    },
+    {
+      "name": "agreement_b",
+      "value": "0.359",
+      "classification": "TRACED",
+      "source_chain": "docs/demo-results.json:B-exclusive-shift-count.exclude.agreement; measure/ii_measure.py::agreement -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 11,
+          "context": "A rule checker can implement its specification correctly without showing that the specification captures a clinician's judgment. ED Roster Gap Lab separates those questions in a Python workbench for s"
+        }
+      ]
+    },
+    {
+      "name": "delta_pp",
+      "value": "26.3",
+      "classification": "TRACED",
+      "source_chain": "100*(A.exclude.agreement-B.exclude.agreement); tools/render_evidence.py -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 65,
+          "context": "After excluding unsure units, changing both details moves simulated agreement by {{delta_pp}} percentage points. This demonstrates sensitivity to definitions on this constructed distribution. It does "
+        }
+      ]
+    },
+    {
+      "name": "bootstrap_reps",
+      "value": 5000,
+      "classification": "TRACED",
+      "source_chain": "docs/demo-results.json:A-inclusive-calendar-day.exclude.bootstrap_reps; measure/ii_measure.py::agreement -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 51,
+          "context": "The interval uses {{bootstrap_reps}} percentile bootstrap resamples of whole rosters with replacement. All scored units from each selected roster are retained, and agreement is unit-weighted. Cluster "
+        }
+      ]
+    },
+    {
+      "name": "unsure",
+      "value": 12,
+      "classification": "TRACED",
+      "source_chain": "docs/demo-results.json:A-inclusive-calendar-day.labels.unsure; demo/run_demo.py::simulated_labels -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 61,
+          "context": "The demonstration has {{units}} units, including {{unsure}} simulated unsure labels. Table 2 is generated from the same saved run as the public JSON. It describes software behavior only."
+        }
+      ]
+    },
+    {
+      "name": "python_version",
+      "value": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "classification": "TRACED",
+      "source_chain": "docs/validation-results.json:python; sys.version from check run -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 57,
+          "context": "Saved local verification used {{python_version}}. Four suites covered detector behavior, measurement controls, successor regressions, and release safeguards. Every planted defect had to trigger its na"
+        }
+      ]
+    },
+    {
+      "name": "validation_table",
+      "value": "Table 1. Local software checks; constructed inputs only.\n\n| Check group | Passed/caught | Failed/uncaught |\n|---|---:|---:|\n| test_gapcheck.py | 29 | 0 |\n| test_measure.py | 26 | 0 |\n| test_gapcheck_r12.py | 22 | 0 |\n| test_release.py | 21 | 0 |\n| mutation_gapcheck.py | 14/14 | 0 |\n| mutation_measure.py | 18/18 | 0 |\n| mutation_gapcheck_r12.py | 10/10 | 0 |",
+      "classification": "TRACED",
+      "source_chain": "docs/validation-results.json:suites/mutations; tools/render_evidence.py table generator -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 59,
+          "context": "{{validation_table}}"
+        }
+      ]
+    },
+    {
+      "name": "demo_table",
+      "value": "Table 2. Synthetic pipeline outputs; SIMULATED rater only.\n\n| Branch | Unsure policy | Scored units | Agreement | 95% roster interval | Kappa |\n|---|---|---:|---:|---|---:|\n| A | exclude | 156 | 0.622 | 0.528\u20130.702 | 0.296 |\n| A | disagree | 168 | 0.577 | 0.488\u20130.661 | 0.296 |\n| B | exclude | 156 | 0.359 | 0.300\u20130.416 | 0.091 |\n| B | disagree | 168 | 0.333 | 0.274\u20130.393 | 0.091 |",
+      "classification": "TRACED",
+      "source_chain": "docs/demo-results.json:each branch/policy; tools/render_evidence.py table generator -> tools/render_evidence.py -> paper/MANUSCRIPT.md",
+      "locations": [
+        {
+          "file": "paper/MANUSCRIPT.md.in",
+          "line": 63,
+          "context": "{{demo_table}}"
+        }
+      ]
+    }
+  ],
+  "bare_numbers": [],
+  "scope": "Generated empirical-looking values and tables; source/version labels, rule IDs, bibliographic years are identifiers, not study outcomes.",
+  "editorial_identifiers": [
+    {
+      "value": "0.1.0",
+      "source": "CITATION.cff version; release metadata"
+    },
+    {
+      "value": "3 November 2026",
+      "source": "completion task date in America/Chicago"
+    },
+    {
+      "value": "H1-H10",
+      "source": "detector/gapcheck.py IMPLEMENTED/INTERFACE_ONLY rule identifiers"
+    },
+    {
+      "value": "reference years/volume/pages",
+      "source": "primary bibliographic sources listed in manuscript; not computation outputs"
+    }
+  ],
+  "audit_note": "Locations and exact source keys were added by a read-only value audit after automated rendering; numerical values were not edited."
+}
