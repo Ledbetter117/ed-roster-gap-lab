@@ -1,0 +1,98 @@
+[
+  {
+    "roster_id": "M01",
+    "constructed_target": "H9"
+  },
+  {
+    "roster_id": "M02",
+    "constructed_target": "valid"
+  },
+  {
+    "roster_id": "M03",
+    "constructed_target": "H3"
+  },
+  {
+    "roster_id": "M04",
+    "constructed_target": "valid"
+  },
+  {
+    "roster_id": "M05",
+    "constructed_target": "H1"
+  },
+  {
+    "roster_id": "M06",
+    "constructed_target": "H2"
+  },
+  {
+    "roster_id": "M07",
+    "constructed_target": "H8"
+  },
+  {
+    "roster_id": "M08",
+    "constructed_target": "H2"
+  },
+  {
+    "roster_id": "M09",
+    "constructed_target": "valid"
+  },
+  {
+    "roster_id": "M10",
+    "constructed_target": "H6"
+  },
+  {
+    "roster_id": "M11",
+    "constructed_target": "H1"
+  },
+  {
+    "roster_id": "M12",
+    "constructed_target": "H3"
+  },
+  {
+    "roster_id": "M13",
+    "constructed_target": "H5"
+  },
+  {
+    "roster_id": "M14",
+    "constructed_target": "H4"
+  },
+  {
+    "roster_id": "M15",
+    "constructed_target": "H7"
+  },
+  {
+    "roster_id": "M16",
+    "constructed_target": "H9"
+  },
+  {
+    "roster_id": "M17",
+    "constructed_target": "H5"
+  },
+  {
+    "roster_id": "M18",
+    "constructed_target": "H6"
+  },
+  {
+    "roster_id": "M19",
+    "constructed_target": "valid"
+  },
+  {
+    "roster_id": "M20",
+    "constructed_target": "H8"
+  },
+  {
+    "roster_id": "M21",
+    "constructed_target": "H4"
+  },
+  {
+    "roster_id": "M22",
+    "constructed_target": "H10"
+  },
+  {
+    "roster_id": "M23",
+    "constructed_target": "H10"
+  },
+  {
+    "roster_id": "M24",
+    "constructed_target": "H7"
+  }
+]

@@ -1,0 +1,1 @@
+Return only the JSON object requested by the user. Apply only the supplied hypothetical rules. Do not add explanations or Markdown.

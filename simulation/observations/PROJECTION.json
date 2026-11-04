@@ -1,0 +1,26 @@
+{
+  "recorded_at": "2026-11-04T03:20:52.771850+00:00",
+  "purpose": "Public projection of actual model responses to synthetic inputs",
+  "projection": "Explicit reproducibility metadata allowlist; host and local receipt paths and transport details excluded; assistant text and errors unchanged",
+  "projector_sha256": "80c185403d2773e6d5802c1166a1bfff1d9e717373e476315dd581e681e083e2",
+  "raters": [
+    {
+      "rater": "BoltBF16",
+      "records": 24,
+      "raw_assistant_texts_unchanged": true,
+      "error_fields_unchanged": true,
+      "original_collection_sha256": "2e193f8d7492aeb212ec5d18f3c6be0d720bee393b842227408c98c2fe3bc696",
+      "public_observations_sha256": "7128c5148a5774aa8ea1625c872efd8802af1a6da8aeac2468f482c86a4dbd12",
+      "native_receipts_sha256": "6d948eb066cca0224e9643afa904330186af054e56e0ea6eff591e3608553b87"
+    },
+    {
+      "rater": "FlintUD-Q3KXL",
+      "records": 24,
+      "raw_assistant_texts_unchanged": true,
+      "error_fields_unchanged": true,
+      "original_collection_sha256": "8923ee1881a801651111e38735a921852855aedfc388fcdbcdb6362d23fc68cc",
+      "public_observations_sha256": "52e4783b493318713a17955da4b93744b63e6eb73a32551b65eae21505bb8137",
+      "native_receipts_sha256": "b9eb9dc94c33a720302a557382c43e85215b13dfbc1031a9cd67b025a92afb05"
+    }
+  ]
+}

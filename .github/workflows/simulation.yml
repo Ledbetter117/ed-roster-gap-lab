@@ -1,0 +1,26 @@
+name: Ten-rule simulation study
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  simulation:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.10', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # Same verified pin as existing project workflow
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # Same verified pin as existing project workflow
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -B simulation/validate_study.py
+      - run: python -B simulation/test_analysis.py
+      - run: python -B simulation/test_cli.py
+      - run: python -B simulation/detector.py simulation/frozen-inputs/rosters/M01.json
+      - run: python -B simulation/analyze_responses.py --validation simulation/validation/20261104T030744.897001Z --responses BoltBF16=simulation/observations/BoltBF16.jsonl --responses FlintUD-Q3KXL=simulation/observations/FlintUD-Q3KXL.jsonl --out simulation-ci-replay
+      - run: python -B simulation/compare_replay.py simulation/analysis/final/RESULTS.json simulation-ci-replay/RESULTS.json

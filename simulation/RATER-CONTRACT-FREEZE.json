@@ -1,0 +1,13 @@
+{
+  "frozen_at": "2026-11-04T02:57:26.394840+00:00",
+  "model_calls_by_this_producer": 0,
+  "files": {
+    "RATER-SYSTEM.txt": "f914925fc955154e73318bc147b17f97b001f290723572c7d45b09251b887370",
+    "RATER-RUN-CONTRACT.json": "57cb18f3218659b386559f2c613be0cd1417d218d2e2b25936f379215c0f593a",
+    "PROTOCOL-CLARIFICATION-01.md": "e851f73ad1a77aa7875fd9a9179756a82cbfff4aade9c4a074dc798450401ead",
+    "PROTOCOL.json": "cb175c0efa22e98bf3bd3cd5d4f3bc00bd88847fc29cc447179bfe60f619e275",
+    "PROTOCOL-FREEZE.json": "591fed88db381c5f9e647ffaa4251dff9f8b9f4ee271a069e44bc0901e04858b",
+    "frozen-inputs/INPUT-FREEZE.json": "3cfe036710d38861550532e71da21f9c0e2337b2e5fd16d67a38f3e161973a69",
+    "frozen-inputs/rater-requests.jsonl": "1574694ad07336929d8f4f03af1598c50458fa9bf2d95aeb562c297ccaf016c0"
+  }
+}

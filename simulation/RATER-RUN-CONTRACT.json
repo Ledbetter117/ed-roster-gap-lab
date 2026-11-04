@@ -1,0 +1,17 @@
+{
+  "study": "edii-simulation-20261103-v1",
+  "requests": "frozen-inputs/rater-requests.jsonl",
+  "request_count_per_rater": 24,
+  "units_per_request": 14,
+  "planned_units_per_rater": 336,
+  "raters_selected_before_calls": ["BoltBF16", "FlintUD-Q3KXL"],
+  "meaning_of_qualified": "Operationally loadable/schema-capable candidate raters; no clinical or expert qualification is asserted.",
+  "system_prompt_file": "RATER-SYSTEM.txt",
+  "user_prompt_field": "prompt",
+  "settings": {"temperature": 0, "max_output_tokens": 4096, "context_tokens": 32768, "thinking": "off", "timeout_seconds": 600},
+  "clarification": "The root preselected these settings before model calls. The request records' max_output_tokens1600 is an initial suggestion; this contract prospectively fixes4096 for both raters. Existing request bytes and the original protocol remain preserved.",
+  "isolation": "Each request is a new independent context. Do not concatenate multiple rosters, send prior answers, reference labels, detector outputs, generator intent, or retry based on result correctness.",
+  "returned_record_schema": {"rater": "BoltBF16 or FlintUD-Q3KXL", "request_id": "edii-sim-M01 through edii-sim-M24", "text": "exact raw assistant response, or empty on failure", "error": "null or transport/failure description", "metadata": {"effective_model_identity": "record actual model/revision/quantization", "effective_settings": {}, "elapsed_seconds": 0, "receipt_path": "local execution receipt"}},
+  "preferred_return": "One JSONL file per rater,24 records including failures, with the exact returned-record fields above. Separate raw output files and receipts are welcome; do not replace malformed answers with generated valid JSON.",
+  "authorization": "The parent owns all model loads/calls. This preparation does not run inference."
+}

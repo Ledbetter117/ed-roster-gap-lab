@@ -1,0 +1,58 @@
+{
+  "recorded_at": "2026-11-04T03:09:01.664031+00:00",
+  "revision": "post-freeze-boundary-correction-01",
+  "outcome_visibility": "Constructed reference results were known; no model response was read by the study implementation agent before this record.",
+  "changes": [
+    "Strict roster container and exactly-seven-day validation",
+    "Runnable all-ten-rule synthetic detector CLI; exclusive creation of output files",
+    "Validation binds exact detector/reference label files, source, protocol and input freeze",
+    "Scorer refuses incomplete generation finishes even without a transport error"
+  ],
+  "unchanged": [
+    "Frozen protocol bytes",
+    "All 24 blinded prompts and frozen roster bytes",
+    "Rule verdict semantics on all 336 planned units",
+    "Reference implementation",
+    "Original human-study records"
+  ],
+  "source_at_input_freeze": "source-at-input-freeze/",
+  "source_sha256": {
+    "detector.py": "a783c92eea73843961975ee59866719c9381d3b53318226e23083f73c44dd904",
+    "reference.py": "545de42fc077e84a95d0dcf022815d792d827ede8b94cee15f305f5e7518b179",
+    "generate_inputs.py": "95f0b95566cc18acc86abe49e24fc6d031bec1b9fe6e8b395506b40e304be1a6",
+    "validate_study.py": "ea205096443394a2c9ea8c6e1f288d8b98e9bd3dbbaa56f3db50246db69bc6e2",
+    "analyze_responses.py": "86cf7b6cf82816abd07cef01b7d1e6ca160b5234bc2bda184adaf518c661f5d7",
+    "test_analysis.py": "d441d340ab201562df68ce2c68d719867b4f20e70f31729be7d767d944bc8e78",
+    "test_cli.py": "4cd1c6142a203711901d2190565d6f95eb675bd58342f8f54a0465406b60b90a"
+  },
+  "frozen_input_manifest_sha256": "3cfe036710d38861550532e71da21f9c0e2337b2e5fd16d67a38f3e161973a69",
+  "validation": "validation/20261104T030744.897001Z/VALIDATION.json",
+  "observed_checks": {
+    "construction_and_input_controls": {
+      "pass": 45,
+      "fail": 0
+    },
+    "rule_removal_mutants": {
+      "caught": 10,
+      "uncaught": 0
+    },
+    "detector_reference_units": {
+      "exact": 336,
+      "different": 0
+    },
+    "analysis_controls": {
+      "pass": 30,
+      "fail": 0
+    },
+    "cli_controls": {
+      "pass": 6,
+      "fail": 0
+    }
+  },
+  "test_commands": [
+    "python -B validate_study.py",
+    "python -B test_analysis.py",
+    "python -B test_cli.py"
+  ],
+  "evidence_basis": "Executed with Python 3.13.15; individual construction checks are saved in VALIDATION.json; analysis and CLI results were observed in execution output."
+}

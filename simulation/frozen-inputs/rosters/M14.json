@@ -1,0 +1,2144 @@
+{
+  "schema_version": "edii-sim-roster-v1",
+  "synthetic": true,
+  "roster_id": "M14",
+  "month_days": 28,
+  "score_days": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "staff": [
+    {
+      "staff_id": "S15",
+      "role": "RN",
+      "charge": true,
+      "competencies": [
+        "TRIAGE",
+        "RESUS"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "DAY"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S09",
+      "role": "RN",
+      "charge": false,
+      "competencies": [
+        "RESUS"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "DAY"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S08",
+      "role": "RN",
+      "charge": false,
+      "competencies": [
+        "TRIAGE"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": true,
+      "allowed_shifts": [
+        "DAY"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S16",
+      "role": "RN",
+      "charge": false,
+      "competencies": [
+        "TRIAGE",
+        "RESUS"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "DAY"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S02",
+      "role": "RN",
+      "charge": false,
+      "competencies": [],
+      "orientee": true,
+      "preceptor": "S16",
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "DAY"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S05",
+      "role": "RN",
+      "charge": true,
+      "competencies": [
+        "TRIAGE",
+        "RESUS"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "DAY"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S01",
+      "role": "RN",
+      "charge": false,
+      "competencies": [
+        "RESUS"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "DAY"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S18",
+      "role": "RN",
+      "charge": false,
+      "competencies": [
+        "TRIAGE"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": true,
+      "allowed_shifts": [
+        "DAY"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S04",
+      "role": "RN",
+      "charge": false,
+      "competencies": [
+        "TRIAGE",
+        "RESUS"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "DAY"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S13",
+      "role": "RN",
+      "charge": false,
+      "competencies": [],
+      "orientee": true,
+      "preceptor": "S04",
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "DAY"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S19",
+      "role": "RN",
+      "charge": true,
+      "competencies": [
+        "TRIAGE",
+        "RESUS"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "NIGHT"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S03",
+      "role": "RN",
+      "charge": false,
+      "competencies": [
+        "RESUS"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "NIGHT"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S10",
+      "role": "RN",
+      "charge": false,
+      "competencies": [
+        "TRIAGE"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": true,
+      "allowed_shifts": [
+        "NIGHT"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S07",
+      "role": "RN",
+      "charge": false,
+      "competencies": [
+        "TRIAGE",
+        "RESUS"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "NIGHT"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S11",
+      "role": "RN",
+      "charge": false,
+      "competencies": [],
+      "orientee": true,
+      "preceptor": "S07",
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "NIGHT"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S14",
+      "role": "RN",
+      "charge": true,
+      "competencies": [
+        "TRIAGE",
+        "RESUS"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "NIGHT"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S20",
+      "role": "RN",
+      "charge": false,
+      "competencies": [
+        "RESUS"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "NIGHT"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S12",
+      "role": "RN",
+      "charge": false,
+      "competencies": [
+        "TRIAGE"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": true,
+      "allowed_shifts": [
+        "NIGHT"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S06",
+      "role": "RN",
+      "charge": false,
+      "competencies": [
+        "TRIAGE",
+        "RESUS"
+      ],
+      "orientee": false,
+      "preceptor": null,
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "NIGHT"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    },
+    {
+      "staff_id": "S17",
+      "role": "RN",
+      "charge": false,
+      "competencies": [],
+      "orientee": true,
+      "preceptor": "S06",
+      "period_cap": 96,
+      "traveler": false,
+      "allowed_shifts": [
+        "NIGHT"
+      ],
+      "contract_days": [
+        1,
+        28
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "staff_id": "S15",
+      "day": 1,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 1,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 1,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 1,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 1,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 1,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 1,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 1,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 1,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 1,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 2,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 2,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 2,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 2,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 2,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 2,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 2,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 2,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 2,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 2,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 3,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 3,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 3,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 3,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 3,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 3,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 3,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 3,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 3,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 3,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 4,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 4,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 4,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 4,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 4,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 4,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 4,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 4,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 4,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 4,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 5,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 5,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 5,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 5,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 5,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 5,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 5,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 5,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 5,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 5,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 6,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 6,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 6,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 6,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 6,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 6,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 6,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 6,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 6,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 6,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 7,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 7,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 7,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 7,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 7,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 7,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 7,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 7,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 7,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 7,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 8,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 8,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 8,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 8,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 8,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 8,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 8,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 8,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 8,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 8,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 9,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 9,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 9,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 9,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 9,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 9,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 9,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 9,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 9,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 9,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 10,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 10,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 10,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 10,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 10,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 10,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 10,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 10,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 10,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 10,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 11,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 11,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 11,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 11,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 11,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 11,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 11,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 11,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 11,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 11,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 12,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 12,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 12,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 12,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 12,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 12,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 12,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 12,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 12,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 12,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 13,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 13,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 13,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 13,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 13,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 13,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 13,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 13,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 13,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 13,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 14,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 14,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 14,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 14,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 14,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 14,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 14,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 14,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 14,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 14,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 15,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 15,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 15,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 15,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 15,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 15,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 15,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 15,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 15,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 15,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 16,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 16,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 16,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 16,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 16,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 16,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 16,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 16,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 16,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 16,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 17,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 17,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 17,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 17,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 17,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 17,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 17,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 17,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 17,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 17,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 18,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 18,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 18,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 18,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 18,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 18,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 18,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 18,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 18,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 18,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 19,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 19,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 19,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 19,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 19,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 19,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 19,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 19,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 19,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 19,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 20,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 20,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 20,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 20,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 20,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 20,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 20,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 20,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 20,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 20,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 21,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 21,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 21,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 21,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 21,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 21,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 21,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 21,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 21,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 21,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 22,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 22,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 22,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 22,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 22,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 22,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 22,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 22,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 22,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 22,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 23,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 23,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 23,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 23,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 23,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 23,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 23,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 23,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 23,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 23,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 24,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 24,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 24,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 24,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 24,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 24,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 24,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 24,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 24,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 24,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 25,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 25,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 25,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 25,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 25,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 25,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 25,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 25,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 25,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 25,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S15",
+      "day": 26,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S09",
+      "day": 26,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S08",
+      "day": 26,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S16",
+      "day": 26,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S02",
+      "day": 26,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S19",
+      "day": 26,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S03",
+      "day": 26,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S10",
+      "day": 26,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S07",
+      "day": 26,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S11",
+      "day": 26,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 27,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 27,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 27,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 27,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 27,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 27,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 27,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 27,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 27,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 27,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S05",
+      "day": 28,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S01",
+      "day": 28,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S18",
+      "day": 28,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S04",
+      "day": 28,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S13",
+      "day": 28,
+      "shift": "DAY",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S14",
+      "day": 28,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S20",
+      "day": 28,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S12",
+      "day": 28,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S06",
+      "day": 28,
+      "shift": "NIGHT",
+      "place": "ED"
+    },
+    {
+      "staff_id": "S17",
+      "day": 28,
+      "shift": "NIGHT",
+      "place": "ED"
+    }
+  ],
+  "census": {
+    "D01/DAY": "normal",
+    "D01/NIGHT": "normal",
+    "D02/DAY": "high",
+    "D02/NIGHT": "normal",
+    "D03/DAY": "high",
+    "D03/NIGHT": "normal",
+    "D04/DAY": "normal",
+    "D04/NIGHT": "surge",
+    "D05/DAY": "normal",
+    "D05/NIGHT": "normal",
+    "D06/DAY": "low",
+    "D06/NIGHT": "normal",
+    "D07/DAY": "normal",
+    "D07/NIGHT": "surge",
+    "D08/DAY": "low",
+    "D08/NIGHT": "surge",
+    "D09/DAY": "normal",
+    "D09/NIGHT": "normal",
+    "D10/DAY": "high",
+    "D10/NIGHT": "normal",
+    "D11/DAY": "low",
+    "D11/NIGHT": "surge",
+    "D12/DAY": "low",
+    "D12/NIGHT": "normal",
+    "D13/DAY": "low",
+    "D13/NIGHT": "normal",
+    "D14/DAY": "normal",
+    "D14/NIGHT": "normal",
+    "D15/DAY": "low",
+    "D15/NIGHT": "high",
+    "D16/DAY": "normal",
+    "D16/NIGHT": "surge",
+    "D17/DAY": "surge",
+    "D17/NIGHT": "surge",
+    "D18/DAY": "normal",
+    "D18/NIGHT": "normal",
+    "D19/DAY": "low",
+    "D19/NIGHT": "low",
+    "D20/DAY": "high",
+    "D20/NIGHT": "low",
+    "D21/DAY": "surge",
+    "D21/NIGHT": "surge",
+    "D22/DAY": "normal",
+    "D22/NIGHT": "high",
+    "D23/DAY": "low",
+    "D23/NIGHT": "normal",
+    "D24/DAY": "normal",
+    "D24/NIGHT": "normal",
+    "D25/DAY": "normal",
+    "D25/NIGHT": "normal",
+    "D26/DAY": "high",
+    "D26/NIGHT": "normal",
+    "D27/DAY": "surge",
+    "D27/NIGHT": "surge",
+    "D28/DAY": "high",
+    "D28/NIGHT": "low"
+  },
+  "unavailable": [
+    [
+      "S20",
+      4,
+      "NIGHT"
+    ]
+  ]
+}

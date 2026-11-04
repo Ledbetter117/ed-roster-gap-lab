@@ -1,0 +1,13 @@
+{
+  "source_sha256": "72d9707404c2dcddd47bb72f0056448c3cb05267c0248171ffa3f09095ff23ff",
+  "pdf_sha256": "7fcd9be46fd90d19cf566eff1f77eec13b336ec927c33416e4d1685ae0c6a30e",
+  "source_unchanged": true,
+  "pages": 5,
+  "renderer_sha256": "384c74b56f8c4831b39195dd8a023db62150209e458361213901146dab6a3241",
+  "Pillow": "13.0.0",
+  "ReportLab": "4.4.9",
+  "pdf_strict_parse": true,
+  "encrypted": false,
+  "document_open_actions": false,
+  "visual_review": "PASS: all five pages reviewed; corrected Table3 caption and Section6 rechecked in final revision; four tables remain legible, no clipping or overflow observed"
+}

@@ -1,0 +1,436 @@
+{
+  "M01/D08/DAY": [],
+  "M01/D08/NIGHT": [],
+  "M01/D09/DAY": [],
+  "M01/D09/NIGHT": [],
+  "M01/D10/DAY": [],
+  "M01/D10/NIGHT": [],
+  "M01/D11/DAY": [],
+  "M01/D11/NIGHT": [
+    "H9"
+  ],
+  "M01/D12/DAY": [],
+  "M01/D12/NIGHT": [],
+  "M01/D13/DAY": [],
+  "M01/D13/NIGHT": [],
+  "M01/D14/DAY": [],
+  "M01/D14/NIGHT": [],
+  "M02/D15/DAY": [],
+  "M02/D15/NIGHT": [],
+  "M02/D16/DAY": [],
+  "M02/D16/NIGHT": [],
+  "M02/D17/DAY": [],
+  "M02/D17/NIGHT": [],
+  "M02/D18/DAY": [],
+  "M02/D18/NIGHT": [],
+  "M02/D19/DAY": [],
+  "M02/D19/NIGHT": [],
+  "M02/D20/DAY": [],
+  "M02/D20/NIGHT": [],
+  "M02/D21/DAY": [],
+  "M02/D21/NIGHT": [],
+  "M03/D22/DAY": [
+    "H3"
+  ],
+  "M03/D22/NIGHT": [],
+  "M03/D23/DAY": [],
+  "M03/D23/NIGHT": [],
+  "M03/D24/DAY": [],
+  "M03/D24/NIGHT": [],
+  "M03/D25/DAY": [
+    "H3"
+  ],
+  "M03/D25/NIGHT": [],
+  "M03/D26/DAY": [
+    "H3"
+  ],
+  "M03/D26/NIGHT": [],
+  "M03/D27/DAY": [],
+  "M03/D27/NIGHT": [],
+  "M03/D28/DAY": [],
+  "M03/D28/NIGHT": [],
+  "M04/D08/DAY": [],
+  "M04/D08/NIGHT": [],
+  "M04/D09/DAY": [],
+  "M04/D09/NIGHT": [],
+  "M04/D10/DAY": [],
+  "M04/D10/NIGHT": [],
+  "M04/D11/DAY": [],
+  "M04/D11/NIGHT": [],
+  "M04/D12/DAY": [],
+  "M04/D12/NIGHT": [],
+  "M04/D13/DAY": [],
+  "M04/D13/NIGHT": [],
+  "M04/D14/DAY": [],
+  "M04/D14/NIGHT": [],
+  "M05/D01/DAY": [],
+  "M05/D01/NIGHT": [],
+  "M05/D02/DAY": [],
+  "M05/D02/NIGHT": [],
+  "M05/D03/DAY": [],
+  "M05/D03/NIGHT": [],
+  "M05/D04/DAY": [
+    "H1"
+  ],
+  "M05/D04/NIGHT": [],
+  "M05/D05/DAY": [],
+  "M05/D05/NIGHT": [],
+  "M05/D06/DAY": [],
+  "M05/D06/NIGHT": [],
+  "M05/D07/DAY": [],
+  "M05/D07/NIGHT": [],
+  "M06/D08/DAY": [
+    "H2"
+  ],
+  "M06/D08/NIGHT": [],
+  "M06/D09/DAY": [],
+  "M06/D09/NIGHT": [],
+  "M06/D10/DAY": [],
+  "M06/D10/NIGHT": [],
+  "M06/D11/DAY": [
+    "H2"
+  ],
+  "M06/D11/NIGHT": [],
+  "M06/D12/DAY": [
+    "H2"
+  ],
+  "M06/D12/NIGHT": [],
+  "M06/D13/DAY": [],
+  "M06/D13/NIGHT": [],
+  "M06/D14/DAY": [],
+  "M06/D14/NIGHT": [],
+  "M07/D01/DAY": [],
+  "M07/D01/NIGHT": [],
+  "M07/D02/DAY": [],
+  "M07/D02/NIGHT": [],
+  "M07/D03/DAY": [],
+  "M07/D03/NIGHT": [],
+  "M07/D04/DAY": [
+    "H8"
+  ],
+  "M07/D04/NIGHT": [],
+  "M07/D05/DAY": [],
+  "M07/D05/NIGHT": [],
+  "M07/D06/DAY": [],
+  "M07/D06/NIGHT": [],
+  "M07/D07/DAY": [],
+  "M07/D07/NIGHT": [],
+  "M08/D08/DAY": [
+    "H2"
+  ],
+  "M08/D08/NIGHT": [],
+  "M08/D09/DAY": [],
+  "M08/D09/NIGHT": [],
+  "M08/D10/DAY": [],
+  "M08/D10/NIGHT": [],
+  "M08/D11/DAY": [
+    "H2"
+  ],
+  "M08/D11/NIGHT": [],
+  "M08/D12/DAY": [
+    "H2"
+  ],
+  "M08/D12/NIGHT": [],
+  "M08/D13/DAY": [],
+  "M08/D13/NIGHT": [],
+  "M08/D14/DAY": [],
+  "M08/D14/NIGHT": [],
+  "M09/D08/DAY": [],
+  "M09/D08/NIGHT": [],
+  "M09/D09/DAY": [],
+  "M09/D09/NIGHT": [],
+  "M09/D10/DAY": [],
+  "M09/D10/NIGHT": [],
+  "M09/D11/DAY": [],
+  "M09/D11/NIGHT": [],
+  "M09/D12/DAY": [],
+  "M09/D12/NIGHT": [],
+  "M09/D13/DAY": [],
+  "M09/D13/NIGHT": [],
+  "M09/D14/DAY": [],
+  "M09/D14/NIGHT": [],
+  "M10/D22/DAY": [],
+  "M10/D22/NIGHT": [],
+  "M10/D23/DAY": [
+    "H6"
+  ],
+  "M10/D23/NIGHT": [],
+  "M10/D24/DAY": [
+    "H6"
+  ],
+  "M10/D24/NIGHT": [],
+  "M10/D25/DAY": [
+    "H6"
+  ],
+  "M10/D25/NIGHT": [],
+  "M10/D26/DAY": [
+    "H6",
+    "H7"
+  ],
+  "M10/D26/NIGHT": [],
+  "M10/D27/DAY": [
+    "H6",
+    "H7"
+  ],
+  "M10/D27/NIGHT": [],
+  "M10/D28/DAY": [
+    "H6",
+    "H7"
+  ],
+  "M10/D28/NIGHT": [],
+  "M11/D08/DAY": [],
+  "M11/D08/NIGHT": [],
+  "M11/D09/DAY": [],
+  "M11/D09/NIGHT": [],
+  "M11/D10/DAY": [],
+  "M11/D10/NIGHT": [],
+  "M11/D11/DAY": [
+    "H1"
+  ],
+  "M11/D11/NIGHT": [],
+  "M11/D12/DAY": [],
+  "M11/D12/NIGHT": [],
+  "M11/D13/DAY": [],
+  "M11/D13/NIGHT": [],
+  "M11/D14/DAY": [],
+  "M11/D14/NIGHT": [],
+  "M12/D15/DAY": [],
+  "M12/D15/NIGHT": [],
+  "M12/D16/DAY": [],
+  "M12/D16/NIGHT": [],
+  "M12/D17/DAY": [
+    "H3"
+  ],
+  "M12/D17/NIGHT": [],
+  "M12/D18/DAY": [
+    "H3"
+  ],
+  "M12/D18/NIGHT": [],
+  "M12/D19/DAY": [],
+  "M12/D19/NIGHT": [],
+  "M12/D20/DAY": [],
+  "M12/D20/NIGHT": [],
+  "M12/D21/DAY": [
+    "H3"
+  ],
+  "M12/D21/NIGHT": [],
+  "M13/D22/DAY": [],
+  "M13/D22/NIGHT": [],
+  "M13/D23/DAY": [],
+  "M13/D23/NIGHT": [],
+  "M13/D24/DAY": [],
+  "M13/D24/NIGHT": [],
+  "M13/D25/DAY": [
+    "H5"
+  ],
+  "M13/D25/NIGHT": [],
+  "M13/D26/DAY": [],
+  "M13/D26/NIGHT": [],
+  "M13/D27/DAY": [],
+  "M13/D27/NIGHT": [],
+  "M13/D28/DAY": [],
+  "M13/D28/NIGHT": [],
+  "M14/D01/DAY": [],
+  "M14/D01/NIGHT": [],
+  "M14/D02/DAY": [],
+  "M14/D02/NIGHT": [],
+  "M14/D03/DAY": [],
+  "M14/D03/NIGHT": [],
+  "M14/D04/DAY": [],
+  "M14/D04/NIGHT": [
+    "H4"
+  ],
+  "M14/D05/DAY": [],
+  "M14/D05/NIGHT": [],
+  "M14/D06/DAY": [],
+  "M14/D06/NIGHT": [],
+  "M14/D07/DAY": [],
+  "M14/D07/NIGHT": [],
+  "M15/D22/DAY": [],
+  "M15/D22/NIGHT": [],
+  "M15/D23/DAY": [],
+  "M15/D23/NIGHT": [],
+  "M15/D24/DAY": [],
+  "M15/D24/NIGHT": [
+    "H7"
+  ],
+  "M15/D25/DAY": [],
+  "M15/D25/NIGHT": [
+    "H7"
+  ],
+  "M15/D26/DAY": [],
+  "M15/D26/NIGHT": [],
+  "M15/D27/DAY": [],
+  "M15/D27/NIGHT": [],
+  "M15/D28/DAY": [],
+  "M15/D28/NIGHT": [
+    "H7"
+  ],
+  "M16/D22/DAY": [],
+  "M16/D22/NIGHT": [],
+  "M16/D23/DAY": [],
+  "M16/D23/NIGHT": [],
+  "M16/D24/DAY": [],
+  "M16/D24/NIGHT": [],
+  "M16/D25/DAY": [],
+  "M16/D25/NIGHT": [
+    "H9"
+  ],
+  "M16/D26/DAY": [],
+  "M16/D26/NIGHT": [],
+  "M16/D27/DAY": [],
+  "M16/D27/NIGHT": [],
+  "M16/D28/DAY": [],
+  "M16/D28/NIGHT": [],
+  "M17/D08/DAY": [],
+  "M17/D08/NIGHT": [],
+  "M17/D09/DAY": [],
+  "M17/D09/NIGHT": [],
+  "M17/D10/DAY": [],
+  "M17/D10/NIGHT": [],
+  "M17/D11/DAY": [
+    "H5"
+  ],
+  "M17/D11/NIGHT": [],
+  "M17/D12/DAY": [],
+  "M17/D12/NIGHT": [],
+  "M17/D13/DAY": [],
+  "M17/D13/NIGHT": [],
+  "M17/D14/DAY": [],
+  "M17/D14/NIGHT": [],
+  "M18/D08/DAY": [],
+  "M18/D08/NIGHT": [],
+  "M18/D09/DAY": [
+    "H6"
+  ],
+  "M18/D09/NIGHT": [],
+  "M18/D10/DAY": [
+    "H6"
+  ],
+  "M18/D10/NIGHT": [],
+  "M18/D11/DAY": [
+    "H6"
+  ],
+  "M18/D11/NIGHT": [],
+  "M18/D12/DAY": [
+    "H6",
+    "H7"
+  ],
+  "M18/D12/NIGHT": [],
+  "M18/D13/DAY": [
+    "H6",
+    "H7"
+  ],
+  "M18/D13/NIGHT": [],
+  "M18/D14/DAY": [
+    "H6",
+    "H7"
+  ],
+  "M18/D14/NIGHT": [],
+  "M19/D22/DAY": [],
+  "M19/D22/NIGHT": [],
+  "M19/D23/DAY": [],
+  "M19/D23/NIGHT": [],
+  "M19/D24/DAY": [],
+  "M19/D24/NIGHT": [],
+  "M19/D25/DAY": [],
+  "M19/D25/NIGHT": [],
+  "M19/D26/DAY": [],
+  "M19/D26/NIGHT": [],
+  "M19/D27/DAY": [],
+  "M19/D27/NIGHT": [],
+  "M19/D28/DAY": [],
+  "M19/D28/NIGHT": [],
+  "M20/D01/DAY": [],
+  "M20/D01/NIGHT": [],
+  "M20/D02/DAY": [],
+  "M20/D02/NIGHT": [],
+  "M20/D03/DAY": [],
+  "M20/D03/NIGHT": [],
+  "M20/D04/DAY": [],
+  "M20/D04/NIGHT": [
+    "H8"
+  ],
+  "M20/D05/DAY": [],
+  "M20/D05/NIGHT": [],
+  "M20/D06/DAY": [],
+  "M20/D06/NIGHT": [],
+  "M20/D07/DAY": [],
+  "M20/D07/NIGHT": [],
+  "M21/D01/DAY": [],
+  "M21/D01/NIGHT": [],
+  "M21/D02/DAY": [],
+  "M21/D02/NIGHT": [],
+  "M21/D03/DAY": [],
+  "M21/D03/NIGHT": [],
+  "M21/D04/DAY": [],
+  "M21/D04/NIGHT": [
+    "H4"
+  ],
+  "M21/D05/DAY": [],
+  "M21/D05/NIGHT": [],
+  "M21/D06/DAY": [],
+  "M21/D06/NIGHT": [],
+  "M21/D07/DAY": [],
+  "M21/D07/NIGHT": [],
+  "M22/D15/DAY": [],
+  "M22/D15/NIGHT": [],
+  "M22/D16/DAY": [],
+  "M22/D16/NIGHT": [],
+  "M22/D17/DAY": [
+    "H10"
+  ],
+  "M22/D17/NIGHT": [],
+  "M22/D18/DAY": [
+    "H10"
+  ],
+  "M22/D18/NIGHT": [],
+  "M22/D19/DAY": [],
+  "M22/D19/NIGHT": [],
+  "M22/D20/DAY": [],
+  "M22/D20/NIGHT": [],
+  "M22/D21/DAY": [
+    "H10"
+  ],
+  "M22/D21/NIGHT": [],
+  "M23/D15/DAY": [
+    "H10"
+  ],
+  "M23/D15/NIGHT": [],
+  "M23/D16/DAY": [],
+  "M23/D16/NIGHT": [],
+  "M23/D17/DAY": [],
+  "M23/D17/NIGHT": [],
+  "M23/D18/DAY": [
+    "H10"
+  ],
+  "M23/D18/NIGHT": [],
+  "M23/D19/DAY": [
+    "H10"
+  ],
+  "M23/D19/NIGHT": [],
+  "M23/D20/DAY": [],
+  "M23/D20/NIGHT": [],
+  "M23/D21/DAY": [],
+  "M23/D21/NIGHT": [],
+  "M24/D22/DAY": [],
+  "M24/D22/NIGHT": [],
+  "M24/D23/DAY": [],
+  "M24/D23/NIGHT": [],
+  "M24/D24/DAY": [
+    "H7"
+  ],
+  "M24/D24/NIGHT": [],
+  "M24/D25/DAY": [
+    "H7"
+  ],
+  "M24/D25/NIGHT": [],
+  "M24/D26/DAY": [],
+  "M24/D26/NIGHT": [],
+  "M24/D27/DAY": [],
+  "M24/D27/NIGHT": [],
+  "M24/D28/DAY": [
+    "H7"
+  ],
+  "M24/D28/NIGHT": []
+}

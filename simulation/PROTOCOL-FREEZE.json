@@ -1,0 +1,7 @@
+{
+  "frozen_at": "2026-11-04T02:53:40.049510+00:00",
+  "protocol_sha256": "cb175c0efa22e98bf3bd3cd5d4f3bc00bd88847fc29cc447179bfe60f619e275",
+  "model_calls_so_far": 0,
+  "reference_outcomes_computed": false,
+  "status": "prospective protocol frozen; source and input binding follows before any scoring"
+}

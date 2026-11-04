@@ -1,0 +1,38 @@
+{
+  "protocol_id": "edii-simulation-20261103-v1",
+  "evidence_type": "CONSTRUCTED SOFTWARE VALIDATION AND DETECTOR-VERSUS-MODEL JUDGMENT; NOT HUMAN OR CLINICAL EVIDENCE",
+  "source_basis_commit": "4e13316f447c972edd76ffed9da7ccd840a59623",
+  "authority": "Founder authorized fictitious rules and model/synthetic substitutes for a separate simulation successor. Original human-study endpoint and historical evidence remain unchanged.",
+  "seed": 2026110302,
+  "rosters": 24,
+  "month_days": 28,
+  "scored_days_per_roster": 7,
+  "shift_scope": ["DAY", "NIGHT"],
+  "planned_units": 336,
+  "design": "Four valid schedules and two constructed perturbation schedules targeting each of H1-H10, shuffled prospectively. Twenty synthetic staff form four alternating two-day crews. Each schedule spans a 28-day fictional month; one seeded week is scored. Co-occurring violations are evaluated by a separate reference implementation, not assumed absent.",
+  "rules": {
+    "H1": "Distinct assigned non-orientee RNs must meet the census-band minimum: low2, normal3, high4, surge4. Charge counts toward this minimum.",
+    "H2": "At least one assigned non-orientee RN has charge qualification.",
+    "H3": "At least one assigned non-orientee RN has TRIAGE competency and at least one has RESUS competency. One RN may satisfy both.",
+    "H4": "No assigned staff member is UNAVAILABLE unless that assignment has the explicit EMERGENCY exception.",
+    "H5": "For every assigned staff member, the gap since the end of the immediately preceding distinct shift must be at least12 hours. Exactly12 is allowed. No prior shift means no violation. Overlap violates this rule.",
+    "H6": "No assigned staff member may be on their fourth or later consecutive calendar day with any assignment. Multiple shifts on one day count as one worked day. Every affected scored block is flagged; this explicitly differs from the historical first-crossing-only finding behavior.",
+    "H7": "Cumulative distinct-shift hours through the current shift, within days1-14 or15-28, must not exceed that person's stated hypothetical contracted-hours cap. This is an upper-cap check, not a minimum-hours or payroll-compliance claim.",
+    "H8": "Each assigned orientee must have their named RN preceptor assigned in the same block; the preceptor must not be an orientee or the orientee themself. One preceptor may supervise at most one orientee in a block.",
+    "H9": "A staff member must not be assigned to more than one distinct place in the same block. Duplicate identical assignment rows do not add hours or places.",
+    "H10": "Each assigned traveler must be within their hypothetical inclusive contract-day interval and assigned to an allowed DAY/NIGHT shift. These are fictional availability terms, not legal interpretations."
+  },
+  "primary_endpoints": [
+    "Detector versus independent reference: binary gap agreement, per-rule recall/precision and exact rule-set agreement over all336 planned units.",
+    "Each model versus reference and versus detector: gap/no-gap agreement over all336 planned units; missing, invalid and unsure answers count as nonagreement in this primary denominator."
+  ],
+  "secondary_endpoints": ["Coverage of valid definite labels; unsure/invalid/missing counts", "Complete-case contingency table, balanced accuracy, sensitivity, specificity and Cohen kappa", "Exact rule-set match and per-rule counts"],
+  "uncertainty": "2000 percentile bootstrap resamples of entire rosters with seed2026110303, retaining all14 units of a selected roster. These design-specific intervals do not establish population or clinical coverage.",
+  "success_rules": {"constructive_validation": "All manually specified controls and boundaries pass; detector/reference discrepancies are reported and must be repaired with retained evidence before a software correctness claim.", "model_operational_completion": "Every planned request has a returned answer or explicit failure record. Completion does not require high agreement.", "illustrative_model_target": "Primary agreement lower bootstrap bound >=0.80 is a predeclared descriptive target only, not a clinical acceptance standard."},
+  "model_protocol": "Two qualified local model raters selected and recorded by the root before execution. One request per roster per rater,14 unit labels per request; temperature0 where supported, no outcome-driven retries, no detector answer/reference/perturbation name/generator intent in prompts. Record model identity, effective settings, raw outputs, failures and timing.",
+  "output_schema": {"schema_version": "edii-rater-v1", "request_id": "exact supplied request_id", "labels": [{"unit_id": "exact supplied unit_id", "label": "gap|no-gap|unsure", "rule_ids": ["H1 through H10; empty for no-gap or unsure"]}]},
+  "answer_rules": "Only a JSON object, optionally enclosed by a single complete JSON code fence, is accepted. Wrong request identity, unknown/duplicate unit IDs or non-schema fields invalidate the request. Missing requested units count as missing. Per-unit bad labels/rule IDs count as invalid. No answer recovery from arbitrary prose. Refusals and transport failures are retained as missing, not discarded.",
+  "blinding": "Models receive the complete hypothetical rule text and normalized staffing facts with independently calculated prior-shift/rest, consecutive-day and cumulative-period context. They do not receive detector/reference judgments. This is assisted judgment on structured facts, not unassisted reading of raw roster images.",
+  "nonclaims": ["No founder rule ratification or genuine human labels", "No clinical validity, staffing safety, legal compliance or deployment outcome", "No population representativeness or causal isolation of individual perturbations", "No change to earlier numerical evidence or the unfinished original human study"],
+  "amendment_rule": "Protocol and source/input hashes are frozen before reference outcomes/model calls. Any necessary correction is a dated amendment retaining prior files and outcome visibility; never silently select cases after outcomes."
+}

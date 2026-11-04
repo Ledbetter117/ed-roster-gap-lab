@@ -1,0 +1,491 @@
+{
+  "recorded_at": "2026-11-04T03:07:44.892650+00:00",
+  "protocol_sha256": "cb175c0efa22e98bf3bd3cd5d4f3bc00bd88847fc29cc447179bfe60f619e275",
+  "input_freeze_sha256": "3cfe036710d38861550532e71da21f9c0e2337b2e5fd16d67a38f3e161973a69",
+  "label_files_sha256": {
+    "detector-labels.json": "69981af26df606c6769372010707b34265937e8eb0deb229efeddc90e5854759",
+    "reference-labels.json": "69981af26df606c6769372010707b34265937e8eb0deb229efeddc90e5854759"
+  },
+  "evidence_type": "CONSTRUCTED SOFTWARE CHECKS; NOT MODEL OR HUMAN OUTCOMES",
+  "manual_checks": [
+    {
+      "name": "valid-block",
+      "expected": [],
+      "detector": [],
+      "reference": [],
+      "pass": true
+    },
+    {
+      "name": "H1-only",
+      "expected": [
+        "H1"
+      ],
+      "detector": [
+        "H1"
+      ],
+      "reference": [
+        "H1"
+      ],
+      "pass": true
+    },
+    {
+      "name": "H2-only",
+      "expected": [
+        "H2"
+      ],
+      "detector": [
+        "H2"
+      ],
+      "reference": [
+        "H2"
+      ],
+      "pass": true
+    },
+    {
+      "name": "H3-only",
+      "expected": [
+        "H3"
+      ],
+      "detector": [
+        "H3"
+      ],
+      "reference": [
+        "H3"
+      ],
+      "pass": true
+    },
+    {
+      "name": "H4-only",
+      "expected": [
+        "H4"
+      ],
+      "detector": [
+        "H4"
+      ],
+      "reference": [
+        "H4"
+      ],
+      "pass": true
+    },
+    {
+      "name": "H5-only",
+      "expected": [
+        "H5"
+      ],
+      "detector": [
+        "H5"
+      ],
+      "reference": [
+        "H5"
+      ],
+      "pass": true
+    },
+    {
+      "name": "H6-only",
+      "expected": [
+        "H6"
+      ],
+      "detector": [
+        "H6"
+      ],
+      "reference": [
+        "H6"
+      ],
+      "pass": true
+    },
+    {
+      "name": "H7-only",
+      "expected": [
+        "H7"
+      ],
+      "detector": [
+        "H7"
+      ],
+      "reference": [
+        "H7"
+      ],
+      "pass": true
+    },
+    {
+      "name": "H8-only",
+      "expected": [
+        "H8"
+      ],
+      "detector": [
+        "H8"
+      ],
+      "reference": [
+        "H8"
+      ],
+      "pass": true
+    },
+    {
+      "name": "H9-only",
+      "expected": [
+        "H9"
+      ],
+      "detector": [
+        "H9"
+      ],
+      "reference": [
+        "H9"
+      ],
+      "pass": true
+    },
+    {
+      "name": "H10-only",
+      "expected": [
+        "H10"
+      ],
+      "detector": [
+        "H10"
+      ],
+      "reference": [
+        "H10"
+      ],
+      "pass": true
+    },
+    {
+      "name": "rest-exactly12-allowed",
+      "expected": [],
+      "detector": [],
+      "reference": [],
+      "pass": true
+    },
+    {
+      "name": "three-consecutive-days-allowed",
+      "expected": [],
+      "detector": [],
+      "reference": [],
+      "pass": true
+    },
+    {
+      "name": "period-hours-exact-cap-allowed",
+      "expected": [],
+      "detector": [],
+      "reference": [],
+      "pass": true
+    },
+    {
+      "name": "contract-endpoints-inclusive",
+      "expected": [],
+      "detector": [],
+      "reference": [],
+      "pass": true
+    },
+    {
+      "name": "nontraveler-contract-not-applied",
+      "expected": [],
+      "detector": [],
+      "reference": [],
+      "pass": true
+    },
+    {
+      "name": "same-place-duplicate-is-not-double-booking",
+      "expected": [],
+      "detector": [],
+      "reference": [],
+      "pass": true
+    },
+    {
+      "name": "non-RN-charge-does-not-qualify",
+      "expected": [
+        "H2"
+      ],
+      "detector": [
+        "H2"
+      ],
+      "reference": [
+        "H2"
+      ],
+      "pass": true
+    },
+    {
+      "name": "preceptor-cannot-be-self",
+      "expected": [
+        "H8"
+      ],
+      "detector": [
+        "H8"
+      ],
+      "reference": [
+        "H8"
+      ],
+      "pass": true
+    },
+    {
+      "name": "preceptor-must-be-RN",
+      "expected": [
+        "H8"
+      ],
+      "detector": [
+        "H8"
+      ],
+      "reference": [
+        "H8"
+      ],
+      "pass": true
+    },
+    {
+      "name": "one-preceptor-cannot-cover-two-orientees",
+      "expected": [
+        "H8"
+      ],
+      "detector": [
+        "H8"
+      ],
+      "reference": [
+        "H8"
+      ],
+      "pass": true
+    },
+    {
+      "name": "explicit-unavailability-exception",
+      "expected": [],
+      "detector": [],
+      "reference": [],
+      "pass": true
+    },
+    {
+      "name": "one-unexcepted-assignment-still-violates",
+      "expected": [
+        "H4"
+      ],
+      "detector": [
+        "H4"
+      ],
+      "reference": [
+        "H4"
+      ],
+      "pass": true
+    },
+    {
+      "name": "period-reset-at-day15",
+      "expected": [],
+      "detector": [],
+      "reference": [],
+      "pass": true
+    },
+    {
+      "name": "H6-flags-fifth-day-too",
+      "expected": [
+        "H6"
+      ],
+      "detector": [
+        "H6"
+      ],
+      "reference": [
+        "H6"
+      ],
+      "pass": true
+    },
+    {
+      "name": "orientee-competency-not-counted",
+      "expected": [
+        "H3"
+      ],
+      "detector": [
+        "H3"
+      ],
+      "reference": [
+        "H3"
+      ],
+      "pass": true
+    },
+    {
+      "name": "not-synthetic",
+      "pass": true
+    },
+    {
+      "name": "duplicate-staff",
+      "pass": true
+    },
+    {
+      "name": "unknown-assignment",
+      "pass": true
+    },
+    {
+      "name": "negative-hours",
+      "pass": true
+    },
+    {
+      "name": "formula-place",
+      "pass": true
+    },
+    {
+      "name": "missing-census",
+      "pass": true
+    },
+    {
+      "name": "duplicate-eighth-scored-day",
+      "pass": true
+    },
+    {
+      "name": "missing-assignments",
+      "pass": true
+    },
+    {
+      "name": "missing-unavailable",
+      "pass": true
+    },
+    {
+      "name": "null-assignments",
+      "pass": true
+    },
+    {
+      "name": "object-unavailable",
+      "pass": true
+    },
+    {
+      "name": "scalar-assignment",
+      "pass": true
+    },
+    {
+      "name": "scalar-staff",
+      "pass": true
+    },
+    {
+      "name": "list-staff-token",
+      "pass": true
+    },
+    {
+      "name": "list-roster-token",
+      "pass": true
+    },
+    {
+      "name": "list-competency",
+      "pass": true
+    },
+    {
+      "name": "list-shift",
+      "pass": true
+    },
+    {
+      "name": "list-census",
+      "pass": true
+    },
+    {
+      "name": "wrong-schema",
+      "pass": true
+    }
+  ],
+  "mutations": [
+    {
+      "removed_rule": "H1",
+      "caught_by": "H1-only",
+      "expected": [
+        "H1"
+      ],
+      "mutant_observed": [],
+      "caught": true
+    },
+    {
+      "removed_rule": "H2",
+      "caught_by": "H2-only",
+      "expected": [
+        "H2"
+      ],
+      "mutant_observed": [],
+      "caught": true
+    },
+    {
+      "removed_rule": "H3",
+      "caught_by": "H3-only",
+      "expected": [
+        "H3"
+      ],
+      "mutant_observed": [],
+      "caught": true
+    },
+    {
+      "removed_rule": "H4",
+      "caught_by": "H4-only",
+      "expected": [
+        "H4"
+      ],
+      "mutant_observed": [],
+      "caught": true
+    },
+    {
+      "removed_rule": "H5",
+      "caught_by": "H5-only",
+      "expected": [
+        "H5"
+      ],
+      "mutant_observed": [],
+      "caught": true
+    },
+    {
+      "removed_rule": "H6",
+      "caught_by": "H6-only",
+      "expected": [
+        "H6"
+      ],
+      "mutant_observed": [],
+      "caught": true
+    },
+    {
+      "removed_rule": "H7",
+      "caught_by": "H7-only",
+      "expected": [
+        "H7"
+      ],
+      "mutant_observed": [],
+      "caught": true
+    },
+    {
+      "removed_rule": "H8",
+      "caught_by": "H8-only",
+      "expected": [
+        "H8"
+      ],
+      "mutant_observed": [],
+      "caught": true
+    },
+    {
+      "removed_rule": "H9",
+      "caught_by": "H9-only",
+      "expected": [
+        "H9"
+      ],
+      "mutant_observed": [],
+      "caught": true
+    },
+    {
+      "removed_rule": "H10",
+      "caught_by": "H10-only",
+      "expected": [
+        "H10"
+      ],
+      "mutant_observed": [],
+      "caught": true
+    }
+  ],
+  "check_pass": 45,
+  "check_fail": 0,
+  "mutants_caught": 10,
+  "mutants_total": 10,
+  "planned_units": 336,
+  "scored_units": 336,
+  "detector_reference_disagreements": [],
+  "reference_gap_units": 46,
+  "reference_rule_counts": {
+    "H9": 2,
+    "H3": 6,
+    "H1": 2,
+    "H2": 6,
+    "H8": 2,
+    "H6": 12,
+    "H7": 12,
+    "H5": 2,
+    "H4": 2,
+    "H10": 6
+  },
+  "source_sha256": {
+    "detector.py": "a783c92eea73843961975ee59866719c9381d3b53318226e23083f73c44dd904",
+    "reference.py": "545de42fc077e84a95d0dcf022815d792d827ede8b94cee15f305f5e7518b179",
+    "generate_inputs.py": "95f0b95566cc18acc86abe49e24fc6d031bec1b9fe6e8b395506b40e304be1a6",
+    "validate_study.py": "ea205096443394a2c9ea8c6e1f288d8b98e9bd3dbbaa56f3db50246db69bc6e2"
+  },
+  "verdict": "PASS"
+}

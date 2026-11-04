@@ -1,0 +1,13 @@
+# Simulation provenance
+
+This successor uses the ten rule-interface topics from `ed-roster-gap-lab` commit `4e13316f447c972edd76ffed9da7ccd840a59623`. The implementation in this directory is a separate, small Python instrument for the explicitly authorized synthetic study. It does not replace or rewrite the earlier detector, historical demonstration, original manuscript, or proposed human study.
+
+The exact hypothetical choices are recorded in PROTOCOL.json. They were chosen to make all ten interfaces executable for the simulation. They were not extracted from hospital policy, founder clinical ratification, patient data, or a real employment contract. H3, H7, and H10 now have specified and implemented behavior; H8 has explicit preceptor identity and capacity. H6's every-affected-block reporting differs from the original first-crossing behavior. These differences are intentional and visible.
+
+PROTOCOL-FREEZE.json precedes reference scoring and model calls. INPUT-FREEZE.json binds the fixed schedules and prompts. RATER-CONTRACT-FREEZE.json records the prospective model-setting clarification. Original source bytes are retained in source-at-input-freeze. SOFTWARE-AMENDMENT-01.json records later input and evidence-handling corrections with their outcome visibility. Earlier validation editions remain available; the current scorer rejects an older receipt that lacks the required label bindings.
+
+The separate reference implementation imports neither the detector nor generator intent. Both implementations and the controls were developed in the same AI-assisted work context. Independent review supplied additional constructed controls and identified two evidence-handling gaps, which were repaired and retested. The independence claim is limited to separate implementations and review; it does not imply independent human labels.
+
+The two rater files contain actual local-model responses to the frozen requests. Their assistant text and error fields are preserved exactly. An allowlist retains model file identities and hashes, runtime-reported settings, finish reasons, token use, and elapsed generation time. Host paths, local receipt paths, and transport details are excluded. Requested generation settings are in RATER-RUN-CONTRACT.json; they are not misrepresented as runtime-echoed settings.
+
+AI assistance contributed to study design, software, testing, review, analysis, and writing. Deterministic reference outputs, actual model outputs, and hypothetical assumptions remain separate evidence categories. The parent repository's MIT license applies to this project code and writing; model weights are not distributed with the repository.

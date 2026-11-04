@@ -1,77 +1,31 @@
-# ED Roster Gap Lab
+# Roster Gap Lab
 
-A small, auditable Python workbench for checking explicit rules on synthetic emergency-department rosters and preparing a blinded comparison with one human rater.
+A reproducible simulation study of ten hypothetical staffing rules and actual local model judgments. The completed simulation engine, study inputs, saved responses, and paper are in [`simulation/`](simulation/README.md).
 
-**This release is software and a study protocol. The human agreement study is pending.** Every bundled rule value is hypothetical. The demonstration uses a simulated rater. There are no real staff records, patient records, clinical outcomes, or claims that the detector can replace clinical judgment.
+## Start here
 
-## Run the complete example
-
-Python 3.10 or newer; Python standard library only. No model, API key, account, model download, or network service is needed. From the project folder:
-
-```sh
-python -B run_ed_ii.py verify
-python -B run_ed_ii.py demo
-python -B run_ed_ii.py checks
+```text
+python -B simulation/detector.py simulation/frozen-inputs/rosters/M01.json
 ```
 
-On Windows, `py -3` can replace `python`. Each demo/check run gets its own folder under `runs/`. Open its `DEMO-REPORT.md` or `TRACK-II-CHECKS-*.json`. The launcher refuses to run when a file differs from the release manifest, and returns failure if a tracked file changes during execution.
+This checks 14 day/shift units and reports the violated rules. Python's standard library is sufficient. No model service, download, or paid call is needed to run the detector or rescore the saved observations.
 
-[v0.1.0 results](docs/RESULTS.md) · [Methods](docs/METHODS.md) · [Limitations](docs/LIMITATIONS.md) · [v0.1.0 paper (PDF)](paper/MANUSCRIPT.pdf) · [Manuscript source](paper/MANUSCRIPT.md) · [Correction record](docs/CORRECTIONS.md) · [Independent review](docs/INDEPENDENT-REVIEW.md) · [Security](SECURITY.md)
+- [Simulation study and commands](simulation/README.md)
+- [Written paper](simulation/paper/MANUSCRIPT.pdf) · [Markdown source](simulation/paper/MANUSCRIPT.md)
+- [Both-model results](simulation/analysis/final/RESULTS.json)
+- [Frozen design](simulation/PROTOCOL.json) and [software correction record](simulation/SOFTWARE-AMENDMENT-01.json)
+- [LinkedIn draft](simulation/LINKEDIN-DRAFT.md)
 
-The paper and numerical evidence retain the reviewed v0.1.0 snapshot. Later file-safety and input-validation corrections have separate [audit evidence](docs/SECURITY-AUDIT.md); they do not rewrite the earlier results or supply missing human judgments.
+## What this project demonstrates
 
-## What this demonstrates
+The simulation engine implements all ten declared constraints: RN headcount, charge coverage, skill coverage, unavailability, rest, consecutive days, period hours, preceptor pairing, multiple-place assignments, and fictional traveler terms. A separately implemented reference matches its exact rule sets on all 336 constructed units. Manual controls, targeted mutations, malformed-input checks, independent review, and saved model observations make the methods inspectable.
 
-- A deterministic rule engine with findings tied to a staff token, day, shift, and rule.
-- Constructed legal and illegal examples, boundary tests, and tests that must catch deliberately planted defects.
-- A measurement workflow that seals detector outputs before issuing a label sheet, locks labels before scoring, and rejects later edits.
-- Honest separation of software correctness, simulated agreement, and the still-missing human evidence.
+This is a study of explicit hypothetical rules. It is not a clinical scheduling product. A high model agreement percentage can conceal missed gaps, so the paper reports sensitivity, balanced accuracy, confusion counts, and a constant no-gap baseline alongside agreement.
 
-```mermaid
-flowchart LR
-    A[Freeze synthetic rosters] --> B[Seal detector outputs]
-    B --> C[Issue blinded facts sheet]
-    C --> D[Human labels the sheet]
-    D --> E[Lock labels]
-    E --> F[Score agreement and roster-level interval]
-```
+## Historical workbench
 
-The demo replaces the human step with an explicitly named `SIMULATED` heuristic and must use `--pipeline-test` to score it. It never writes a founder label.
+The earlier detector, `run_ed_ii.py` launcher, and [original protocol](PROTOCOL.md) remain available for reproducing historical demonstrations. Their unimplemented interfaces and earlier numbers belong to that edition. Use the `simulation/detector.py` command above for the new ten-rule instrument.
 
-## Check one roster
+The proposed founder-versus-detector human study remains a separate future empirical project. The authorized simulation study uses actual model observations and constructed reference labels; neither is presented as human judgment. AI assistance contributed to implementation, review, analysis, and writing. No clinical validity, safe staffing, human agreement, or measured time savings is claimed.
 
-```sh
-python -B run_ed_ii.py detect --rules rules/RULES.test-H2-H4.json --input fixtures/CONSTRUCTED-ILLEGAL-PC-01.json
-```
-
-Exit `0` means evaluation completed; inspect `findings` to see violations. Exit `3` means no evaluation ran. Exit `2` means an input or command error. Exit `4` means release integrity failed. The founder template returns `NOT_RUN` because its rules are unset.
-
-`detect --out` requires a new output file. Measurement label sheets are issued once and never overwrite an existing CSV. Keep one operator per set and use a new set for changed study choices. Shift names are short letter-led tokens such as `DAY` or `NIGHT`.
-
-| Rule | Implemented check |
-|---|---|
-| H1 | RN count against the selected census-band minimum |
-| H2 | At least one charge-qualified RN on a shift |
-| H4 | Assignments that conflict with stated unavailability and allowed exceptions |
-| H5 | Rest from shift end to the next start; optional day-after-night prohibition |
-| H6 | Consecutive-work limit, with an explicit calendar-day or shift count choice |
-| H9 | Assignments to separate places in the same block |
-
-H8 has a limited **hypothetical** orientee/preceptor branch. H3, H7, and H10 are declared interfaces without implementations. Read the exact [capability limits](docs/LIMITATIONS.md).
-
-## What remains to finish the original study
-
-The original endpoint is detector-versus-founder judgment agreement with an interval. It requires reviewed staffing rules, prespecified measurement choices, and genuine labels made before unblinding. Those inputs are absent. The [input sheet](docs/FOUNDER-INPUTS.md) consolidates what is missing; the [protocol](docs/PROTOCOL.md) describes the sequence. A software release does not complete that endpoint.
-
-## Project layout
-
-| Path | Purpose |
-|---|---|
-| `detector/`, `rules/`, `fixtures/` | Rule engine, unset founder template, constructed test inputs |
-| `measure/` | Reproducible roster generation, sealing, label locking, agreement |
-| `tests/` | Regression and planted-defect checks |
-| `demo/` | Two hypothetical branches using the same simulated labels |
-| `docs/`, `paper/` | Methods, limitations, reproducible result tables, protocol, manuscript |
-| `tools/` | Test runner, evidence renderer, intentional manifest regeneration |
-
-The code continues the Track (ii) workbench built in October 2026. This portable edition corrects integrity enforcement, mutation accounting, frozen-set reuse, and incomplete-rule scoring. See [provenance](docs/PROVENANCE.md). MIT licensed; see [LICENSE](LICENSE).
+See [security reporting](SECURITY.md) and the MIT [license](LICENSE).
