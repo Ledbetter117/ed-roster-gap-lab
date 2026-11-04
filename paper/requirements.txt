@@ -1,4 +1,4 @@
 # Optional PDF renderer only; Python 3.11+. Core software stays standard-library Python 3.10+.
-reportlab==4.4.9
+reportlab==5.1.0
 pillow==13.0.0
 charset-normalizer==3.5.2
