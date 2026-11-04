@@ -27,13 +27,37 @@ Colour review 2026-10-30 (review/COLOUR-REVIEW_track-ii_2026-10-30.md):
   CR-M9 every sheet row names its set, and a sheet from another set is refused at the lock
   CR-M10 agreement before the lock is a refusal that names the next step, not a traceback
 """
-import argparse, csv, hashlib, json, os, random, sys
+import argparse, csv, hashlib, json, os, random, re, sys, tempfile
+from pathlib import Path
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(HERE), "detector"))
 import gapcheck as G  # noqa: E402
 
 LABELS = {"gap", "no-gap", "unsure"}
+
+
+def set_path(d, *parts):
+    """Keep manifest-derived reads and internal writes inside this set.
+
+    This is a local file-safety check, not protection from a process that can
+    concurrently replace the same user's files.
+    """
+    root = Path(d).resolve()
+    candidate = root.joinpath(*parts)
+    if not candidate.resolve().is_relative_to(root):
+        raise SystemExit("REFUSED: set path escapes its directory")
+    for component in candidate.relative_to(root).parts:
+        root = root / component
+        if root.is_symlink() or (hasattr(root, "is_junction") and root.is_junction()):
+            raise SystemExit("REFUSED: linked paths are not accepted inside a set")
+    return str(candidate)
+
+
+def roster_path(d, rid, sealed=False):
+    if not isinstance(rid, str) or not re.fullmatch(r"R[0-9]{3,}", rid):
+        raise SystemExit("REFUSED: roster IDs must be tokens such as R001, not paths")
+    return set_path(d, *(('SEALED', 'detector') if sealed else ('rosters',)), rid + '.json')
 
 
 def h_bytes(b):
@@ -47,9 +71,16 @@ def h_file(p):
 
 def write_json(p, obj):
     os.makedirs(os.path.dirname(p), exist_ok=True)
-    with open(p, "w", encoding="utf-8", newline="\n") as f:   # 1.2 (T2-W01): LF on every OS, so hashes match across OSes
-        json.dump(obj, f, indent=1, sort_keys=True)
-        f.write("\n")
+    # Replace the directory entry rather than truncate a pre-existing hard link.
+    fd, tmp = tempfile.mkstemp(prefix='.ii-write-', dir=os.path.dirname(p))
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as f:
+            json.dump(obj, f, indent=1, sort_keys=True)
+            f.write("\n")
+        os.replace(tmp, p)
+    finally:
+        if os.path.exists(tmp):
+            os.unlink(tmp)
 
 
 GENERATOR = {  # HYPOTHETICAL generator settings: they shape the set only. They are not clinical rules or the founder's numbers.
@@ -70,6 +101,10 @@ def make_set(out, n, days, seed, unit):
         raise SystemExit("REFUSED: n must be positive and days must be between 1 and 999")
     if unit not in ("both", "nights"):
         raise SystemExit("REFUSED: unit must be both or nights")
+    try:
+        os.makedirs(out, exist_ok=False)
+    except FileExistsError:
+        raise SystemExit("REFUSED: set output already exists; use a new directory")
     rng = random.Random(f"ii-set:{seed}")
     staff = [{"staff_id": f"S{i:02d}", "role": "RN", "qualifications": ["charge"] if i <= 3 else []} for i in range(1, 11)]
     shifts = [{"shift": "DAY", "start_hour": 7, "end_hour": 19}, {"shift": "NIGHT", "start_hour": 19, "end_hour": 7}]
@@ -137,17 +172,27 @@ def make_set(out, n, days, seed, unit):
 
 
 def load_set(d):
-    man = json.load(open(os.path.join(d, "SET-MANIFEST.json"), encoding="utf-8"))
+    man = json.load(open(set_path(d, "SET-MANIFEST.json"), encoding="utf-8"))
+    if not isinstance(man, dict) or man.get("schema") != "ii-roster-set/1" or not isinstance(man.get("rosters"), dict) or not man["rosters"]:
+        raise SystemExit("REFUSED: invalid roster-set manifest")
+    if man.get("unit") not in ("both", "nights"):
+        raise SystemExit("REFUSED: invalid roster-set unit")
     for rid, hv in man["rosters"].items():
-        if h_file(os.path.join(d, "rosters", rid + ".json")) != hv:
+        p = roster_path(d, rid)
+        if not isinstance(hv, str) or not re.fullmatch(r"[0-9a-f]{64}", hv):
+            raise SystemExit("REFUSED: invalid roster digest")
+        if h_file(p) != hv:
             raise SystemExit(f"REFUSED: roster {rid} changed after the set was frozen")
+    if h_bytes(json.dumps(man["rosters"], sort_keys=True).encode()) != man.get("set_sha256"):
+        raise SystemExit("REFUSED: roster-set digest does not match its manifest")
     return man
 
 
 def units_of(man, d):
     out = []
     for rid in sorted(man["rosters"]):
-        r = json.load(open(os.path.join(d, "rosters", rid + ".json"), encoding="utf-8"))
+        r = json.load(open(roster_path(d, rid), encoding="utf-8"))
+        G.validate_input(r)
         for date in r["dates"]:
             for sh in r["shifts"]:
                 if man["unit"] == "both" or sh["shift"] == "NIGHT":
@@ -157,22 +202,22 @@ def units_of(man, d):
 
 def seal(d, rules_path):
     man = load_set(d)
-    if os.path.exists(os.path.join(d, "LABELS-LOCK.json")):
+    if os.path.exists(set_path(d, "LABELS-LOCK.json")):
         raise SystemExit("REFUSED: labels are already locked; sealing after labelling would break the blinding order")
-    if os.path.exists(os.path.join(d, "LABEL-SHEET.json")):
+    if os.path.exists(set_path(d, "LABEL-SHEET.json")):
         raise SystemExit("REFUSED: the label sheet was already issued after the earlier seal; sealing again now would let the rules "
                          "follow the labels. Make a new set for new rules")
     rules = json.load(open(rules_path, encoding="utf-8"))
     outs = {}
     for rid in sorted(man["rosters"]):
-        env = G.detect(json.load(open(os.path.join(d, "rosters", rid + ".json"), encoding="utf-8")), rules)
-        p = os.path.join(d, "SEALED", "detector", rid + ".json")
+        env = G.detect(json.load(open(roster_path(d, rid), encoding="utf-8")), rules)
+        p = roster_path(d, rid, sealed=True)
         write_json(p, env)
         outs[rid] = h_file(p)
     s = {"rules_sha256": h_file(rules_path), "rules_source": rules.get("source"), "detector_version": G.DETECTOR_VERSION,
          "detector_sha256": h_file(os.path.abspath(G.__file__)), "kit_sha256": h_file(os.path.abspath(__file__)),
          "outputs": outs, "set_sha256": man["set_sha256"]}
-    write_json(os.path.join(d, "DETECTOR-SEAL.json"), s)
+    write_json(set_path(d, "DETECTOR-SEAL.json"), s)
     return s
 
 
@@ -209,22 +254,27 @@ def render(r, date, shift):
 
 def label_sheet(d, out_csv):
     man = load_set(d)
-    if not os.path.exists(os.path.join(d, "DETECTOR-SEAL.json")):
+    if not os.path.exists(set_path(d, "DETECTOR-SEAL.json")):
         raise SystemExit("REFUSED: seal the detector outputs before the label sheet exists (blinding order)")
-    if os.path.exists(os.path.join(d, "LABELS-LOCK.json")):
+    if os.path.exists(set_path(d, "LABELS-LOCK.json")):
         raise SystemExit("REFUSED: labels are already locked; a new sheet is not issued after the lock")
+    sheet_record = set_path(d, "LABEL-SHEET.json")
+    if os.path.exists(sheet_record):
+        raise SystemExit("REFUSED: the label sheet was already issued; preserve that sheet and its labels")
+    if os.path.lexists(out_csv):
+        raise SystemExit("REFUSED: label-sheet output already exists; choose a new file")
     us = units_of(man, d)
     random.Random(man["set_sha256"]).shuffle(us)
     rows = []
     for i, (rid, date, sh) in enumerate(us, 1):
-        r = json.load(open(os.path.join(d, "rosters", rid + ".json"), encoding="utf-8"))
+        r = json.load(open(roster_path(d, rid), encoding="utf-8"))
         rows.append({"order": i, "unit_id": f"{rid}/{date}/{sh}", "set": man["set_sha256"][:12], "roster": rid, "date": date, "shift": sh,
                      "facts": render(r, date, sh), "label (gap / no-gap / unsure)": "", "note": ""})
-    with open(out_csv, "w", newline="", encoding="utf-8") as f:
+    with open(out_csv, "x", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader(); w.writerows(rows)
-    write_json(os.path.join(d, "LABEL-SHEET.json"), {"sheet_sha256": h_file(out_csv), "n_units": len(rows),
-                                                     "seal_sha256": h_file(os.path.join(d, "DETECTOR-SEAL.json"))})
+    write_json(sheet_record, {"sheet_sha256": h_file(out_csv), "n_units": len(rows),
+                             "seal_sha256": h_file(set_path(d, "DETECTOR-SEAL.json"))})
     return len(rows)
 
 
@@ -244,7 +294,7 @@ def read_labels(p):
 
 
 def _need(d, name, step):
-    p = os.path.join(d, name)
+    p = set_path(d, name)
     if not os.path.exists(p):
         raise SystemExit(f"REFUSED: {name} is missing; run {step} first (order: make-set, seal, label-sheet, lock-labels, agreement)")
     return p
@@ -252,7 +302,7 @@ def _need(d, name, step):
 
 def lock_labels(d, labels_csv, rater):
     man = load_set(d)
-    if os.path.exists(os.path.join(d, "LABELS-LOCK.json")):
+    if os.path.exists(set_path(d, "LABELS-LOCK.json")):
         raise SystemExit("REFUSED: labels are already locked; a later edit is recorded separately, never re-locked")
     sheet = json.load(open(_need(d, "LABEL-SHEET.json", "label-sheet"), encoding="utf-8"))
     seal_hash = h_file(_need(d, "DETECTOR-SEAL.json", "seal"))
@@ -273,7 +323,7 @@ def lock_labels(d, labels_csv, rater):
     lock = {"labels_sha256": h_file(labels_csv), "rater": rater, "rater_is_a_declaration": True, "n_units": len(lab),
             "seal_sha256": seal_hash, "sheet_sha256": sheet["sheet_sha256"],
             "counts": {k: sum(1 for v in lab.values() if v == k) for k in sorted(LABELS)}}
-    write_json(os.path.join(d, "LABELS-LOCK.json"), lock)
+    write_json(set_path(d, "LABELS-LOCK.json"), lock)
     return lock
 
 
@@ -282,7 +332,7 @@ def verdicts(d, man, seal_rec):
     not-evaluated if no finding falls on it and a ratified rule was skipped for its block; otherwise no-gap."""
     v = {}
     for rid in sorted(man["rosters"]):
-        p = os.path.join(d, "SEALED", "detector", rid + ".json")
+        p = roster_path(d, rid, sealed=True)
         if h_file(p) != seal_rec["outputs"][rid]:
             raise SystemExit(f"REFUSED: sealed detector output {rid} changed after sealing")
         env = json.load(open(p, encoding="utf-8"))
@@ -292,7 +342,7 @@ def verdicts(d, man, seal_rec):
         days = {f["locator"]["date"] for f in env["findings"] if f["locator"]["shift"] is None}
         skipped = {(s["scope"]["date"], s["scope"]["shift"]) for s in env["rules_skipped"] if isinstance(s.get("scope"), dict)}
         incomplete = any(s.get("scope") == "all" and s.get("ratified") for s in env["rules_skipped"])
-        r = json.load(open(os.path.join(d, "rosters", rid + ".json"), encoding="utf-8"))
+        r = json.load(open(roster_path(d, rid), encoding="utf-8"))
         for date in r["dates"]:
             for sh in r["shifts"]:
                 b = (date, sh["shift"])

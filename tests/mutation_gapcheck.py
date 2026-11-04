@@ -14,7 +14,7 @@ M = [
     ("D4 the inclusive/exclusive boundary ignored", '(rest == p["min_rest_hours"] and not p["boundary_inclusive"])', 'False', ["A1"]),
     ("D5 a missing band guessed as 'normal'", '            if b not in BANDS:\n                pol = p["missing_band_policy"]',
      '            if b not in BANDS:\n                pol = "normal"', ["A2-missing", "A2-unknown"]),
-    ("D6 the synthetic-only fence removed", 'if (r.get("provenance") or {}).get("synthetic") is not True:', 'if False:', ["F1-not-synthetic"]),
+    ("D6 the synthetic-only fence removed", 'if not isinstance(r.get("provenance"), dict) or r["provenance"].get("synthetic") is not True:', 'if False:', ["F1-not-synthetic"]),
     ("D7 H4 exceptions ignored", 'and a.get("exception") not in allowed:', ':', ["H4-b"]),
     ("D8 the UNSATISFIABLE note removed", 'if charge and all((c, d, s) in unavail for c in charge):', 'if False:', ["A3-H2", "A3-H4"]),
     ("D10 H9 ignore list ignored", 'if a.get("place") not in ignore:', 'if True:', ["H9-b"]),

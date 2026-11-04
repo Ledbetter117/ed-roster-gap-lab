@@ -1,5 +1,7 @@
 # Independent source and claim review
 
+This is the preserved **v0.1.0** review. It covers that release's recorded source and claims. Later security corrections and local checks are recorded separately in [SECURITY-AUDIT.md](SECURITY-AUDIT.md); this earlier review does not certify changed security code.
+
 **PASS within the reviewed source and manuscript-claim scope, after one material defect was fixed.** A separate Codex agent used its own scratch copies, additional probes and a full rerun. This is separate-agent review within the same model family, not human peer review or cross-family validation.
 
 The reviewer found that a non-RN carrying the charge qualification could satisfy H2. The corrected code requires role RN plus the charge qualification; the reviewer reproduced both expected violations on its original constructed case and confirmed the normal RN controls still pass.

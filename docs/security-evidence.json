@@ -1,0 +1,43 @@
+{
+  "baseline_commit": "ea506d7ef072ed65d00ff51ec48bac8003aa6515",
+  "raw_checks_sha256": "b5a03c966ec85b16a6e237b24802bb32d22c372b3f48dcd5ce6872ed2c3a5631",
+  "raw_demo_sha256": "11c383dad7c16c3e26f3f90c4aebfb1c8d68fce49887e315989b8449ceca3915",
+  "historical_demo_sha256": "1d54997130ee7e8e0be183fcc06befda2834b9f6cb89689da80964fb79a86202",
+  "historical_paper_sha256": "eed90e8d6a8bc234f789cdfaa53a31b436f87e3dc0321e3465428edea116211c",
+  "source_sha256": {
+    "demo/run_demo.py": "791098b74f728b414c2ff08a072d89ae0d97bc1267e77d07cf045e5623ab157e",
+    "detector/gapcheck.py": "6d0f013de944505066a740ccda0b664a346c4feba08a0d8d9b8c346607b998c0",
+    "detector/make_fixtures.py": "36c8f03314d2ff8f61e379e19fe4defb3f4177a7913cb4c1657e9d7a77b59f4e",
+    "measure/ii_measure.py": "48ed091c194404647d27e1d6b6a04f32ff6a2e594347abb236a404d4f70a895d",
+    "run_ed_ii.py": "57d4c7b24d5260769a8fe6ae303a30f56f5d29fe69ebaa27913f2c4da87e0f19",
+    "tests/mutation_gapcheck.py": "76dc4720cb2621c7028272d6fe618a3963eb63185785db8c7bfb08a7ad0775be",
+    "tests/mutation_gapcheck_r12.py": "17a41e4bf21245da839883626e0f54806072174004c235f990d70088a7f736b7",
+    "tests/mutation_measure.py": "164764d5cdafc7f714b318e65dcfdbddf6bc1b670ce0c3ea5bec9e172008da56",
+    "tests/test_gapcheck.py": "61b25465fe387f56c6009dde182ac72b42027059147927299d6ff9ad6abcc0b2",
+    "tests/test_gapcheck_r12.py": "0c2a17fddc1c95e79bda0c80c4460bc0dea61bac36e67bd9134ab14dc4e35c10",
+    "tests/test_measure.py": "fd0927a7dee81721fb7f21d01446c36441c60445fb49dc39761566594aea793e",
+    "tests/test_release.py": "798e94ce3b56c0adf06b8df89e360d91198a648fdb2845d7a9b47fa3b563d101",
+    "tests/test_security.py": "682b10ad55234cf25508d79a87c23f88a81998136b76200dbc01ac582e649147",
+    "tools/build_manifest.py": "96bff8aac7dc42fd7f334e71a6d10d96e596add4ade3417a7475dc995746249f",
+    "tools/public_release_guard.py": "7a206d1f81f677681f4cc8b408a57997578ef8f601370f25b29637f99076f7cc",
+    "tools/render_evidence.py": "7a473f2e60a172def54a7bd1721e7a2160429814718caa8fe0a281facfd0c17b",
+    "tools/render_paper.py": "925c1533f85e878117dc4000c17cca9715119e6224f4a4768a8f88417a59bba0",
+    "tools/run_track_ii_checks.py": "ea6ae60e719e7f551cbe62bac098ca31e96b56d9be7f80be5bd16b379d5159f4",
+    "tools/test_public_release_guard.py": "0323e276e66c1e7d8168123b19755a4c486c70f9dcfaca142057206f5e28949c"
+  },
+  "numerical_fields_compared": 52,
+  "all_numerical_fields_unchanged": true,
+  "label_counts_unchanged": true,
+  "optional_renderer_versions": {
+    "reportlab": "4.4.9",
+    "pillow": "13.0.0",
+    "charset_normalizer": "3.5.2"
+  },
+  "pdf_text_identical": true,
+  "pdf_pages": 5,
+  "unverified": [
+    "Windows host denied symlink creation; junction and hard-link checks passed"
+  ],
+  "scope_note": "Shared public-release guard and final GitHub publication/CI have separate release-owner evidence. This record binds the executed evaluation/security source snapshot.",
+  "independent_review_correction": "Null H8 parameters are skipped with ratified=true; no-finding units remain not-evaluated. The earlier candidate crashed. Two regressions were added."
+}

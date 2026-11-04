@@ -7,12 +7,12 @@ import json, os, re, shutil, subprocess, sys
 
 ROOT, SCR, OUT = sys.argv[1:4]
 M = [
-    ("K1 the label sheet allowed before the seal", 'if not os.path.exists(os.path.join(d, "DETECTOR-SEAL.json")):', 'if False:', ["M2"]),
-    ("K2 a re-seal allowed after the sheet was issued", 'if os.path.exists(os.path.join(d, "LABEL-SHEET.json")):', 'if False:', ["M15"]),
+    ("K1 the label sheet allowed before the seal", 'if not os.path.exists(set_path(d, "DETECTOR-SEAL.json")):', 'if False:', ["M2"]),
+    ("K2 a re-seal allowed after the sheet was issued", 'if os.path.exists(set_path(d, "LABEL-SHEET.json")):', 'if False:', ["M15"]),
     ("K3 labels edited after the lock accepted", 'if h_file(labels_csv) != lock["labels_sha256"]:', 'if False:', ["M6"]),
     ("K4 simulated labels accepted as a result", 'if lock["rater"] != "founder" and not pipeline_test:', 'if False:', ["M4"]),
     ("K5 a changed sealed output accepted", 'if h_file(p) != seal_rec["outputs"][rid]:', 'if False:', ["M10"]),
-    ("K6 a changed roster accepted", 'if h_file(os.path.join(d, "rosters", rid + ".json")) != hv:', 'if False:', ["M12"]),
+    ("K6 a changed roster accepted", 'if h_file(p) != hv:', 'if False:', ["M12"]),
     ("K7 the unsure=exclude policy ignored", 'if unsure == "exclude":', 'if False:', ["M9"]),
     ("K8 the bootstrap resamples units, not rosters",
      'smp = [p for k in (keys[rng.randrange(len(keys))] for _ in keys) for p in by_roster[k]]',

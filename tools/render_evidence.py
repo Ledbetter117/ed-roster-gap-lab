@@ -12,6 +12,17 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def source_path(name):
+    """Source keys are relative Python files, never paths outside the project."""
+    if not isinstance(name, str) or '\\' in name or ':' in name:
+        raise SystemExit("REFUSED: unsafe evidence source path")
+    rel = Path(name)
+    path = (ROOT / rel).resolve()
+    if rel.is_absolute() or '..' in rel.parts or any(p.startswith('.') for p in rel.parts) or rel.suffix != '.py' or not path.is_relative_to(ROOT.resolve()):
+        raise SystemExit("REFUSED: unsafe evidence source path")
+    return path
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--demo", type=Path, required=True)
@@ -22,7 +33,7 @@ def main():
     if checks["verdict"] != "PASS" or not checks.get("source_sha256"):
         raise SystemExit("REFUSED: passing check record with source hashes required")
     for name, expected in checks["source_sha256"].items():
-        if sha(ROOT / name) != expected:
+        if sha(source_path(name)) != expected:
             raise SystemExit("REFUSED: source changed since checks: " + name)
     branches = [name for name in raw["results"] if name != "founder_template"]
     if len(branches) != 2:
@@ -35,6 +46,8 @@ def main():
                 raise SystemExit("REFUSED: this publication renderer accepts only simulated pipeline evidence")
             if record["detector_sha256"] != sha(ROOT / "detector/gapcheck.py") or record["kit_sha256_at_seal"] != sha(ROOT / "measure/ii_measure.py"):
                 raise SystemExit("REFUSED: source changed since demo")
+    if branches != ['A-inclusive-calendar-day', 'B-exclusive-shift-count']:
+        raise SystemExit("REFUSED: unrecognized demo branches; expected the recorded A/B experiment")
     sets = [args.demo.parent / "scratch" / branch / "set/SET-MANIFEST.json" for branch in branches]
     man = json.loads(sets[0].read_text(encoding="utf-8"))
     a, b = (result[branch]["exclude"]["agreement"] for branch in branches)

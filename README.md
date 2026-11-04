@@ -16,7 +16,9 @@ python -B run_ed_ii.py checks
 
 On Windows, `py -3` can replace `python`. Each demo/check run gets its own folder under `runs/`. Open its `DEMO-REPORT.md` or `TRACK-II-CHECKS-*.json`. The launcher refuses to run when a file differs from the release manifest, and returns failure if a tracked file changes during execution.
 
-[Saved results](docs/RESULTS.md) · [Methods](docs/METHODS.md) · [Limitations](docs/LIMITATIONS.md) · [Read the paper (PDF)](paper/MANUSCRIPT.pdf) · [Manuscript source](paper/MANUSCRIPT.md) · [Correction record](docs/CORRECTIONS.md) · [Independent review](docs/INDEPENDENT-REVIEW.md)
+[v0.1.0 results](docs/RESULTS.md) · [Methods](docs/METHODS.md) · [Limitations](docs/LIMITATIONS.md) · [v0.1.0 paper (PDF)](paper/MANUSCRIPT.pdf) · [Manuscript source](paper/MANUSCRIPT.md) · [Correction record](docs/CORRECTIONS.md) · [Independent review](docs/INDEPENDENT-REVIEW.md) · [Security](SECURITY.md)
+
+The paper and numerical evidence retain the reviewed v0.1.0 snapshot. Later file-safety and input-validation corrections have separate [audit evidence](docs/SECURITY-AUDIT.md); they do not rewrite the earlier results or supply missing human judgments.
 
 ## What this demonstrates
 
@@ -43,6 +45,8 @@ python -B run_ed_ii.py detect --rules rules/RULES.test-H2-H4.json --input fixtur
 ```
 
 Exit `0` means evaluation completed; inspect `findings` to see violations. Exit `3` means no evaluation ran. Exit `2` means an input or command error. Exit `4` means release integrity failed. The founder template returns `NOT_RUN` because its rules are unset.
+
+`detect --out` requires a new output file. Measurement label sheets are issued once and never overwrite an existing CSV. Keep one operator per set and use a new set for changed study choices. Shift names are short letter-led tokens such as `DAY` or `NIGHT`.
 
 | Rule | Implemented check |
 |---|---|

@@ -1,5 +1,7 @@
 # Results: software checks and simulated demonstration
 
+This is the preserved **v0.1.0** evidence snapshot. Source hashes and counts below describe that release. Later security checks and corrections are separate in [SECURITY-AUDIT.md](SECURITY-AUDIT.md).
+
 **No human agreement result is available.** All demonstration labels are SIMULATED.
 
 Table 1. Local software checks; constructed inputs only.

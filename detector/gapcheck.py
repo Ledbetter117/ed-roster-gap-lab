@@ -39,7 +39,7 @@ Increment 1.2 (ORCA-ED-MAX-PROGRESS-20261030, Windows reproduction and adversari
       roster marks orientees and their preceptors
 Defaults are unchanged for every 1.1 input that 1.1 handled validly; changed results occur only for R1-R4 inputs.
 """
-import argparse, hashlib, json, re, sys
+import argparse, hashlib, json, math, re, sys
 
 DETECTOR_VERSION = "gapcheck-increment-1.2.1-2026-11-03"  # 1.2: R1-R7 above; 1.1: colour-review fixes CR-T1..CR-T3
 RATIFIED = {"MED", "HIGH"}
@@ -56,8 +56,16 @@ H6_UNITS = ("calendar_day", "shift")
 def validate_rules(rules):
     """R1: problems with the parameters of RATIFIED implemented rules (types and impossibilities only; no clinical bound)."""
     bad = []
+    if not isinstance(rules, dict) or not isinstance(rules.get("rules", {}), dict):
+        return ["rules must be an object containing a rules object"]
     for rid, spec in ((rules.get("rules") or {}).items()):
-        if not isinstance(spec, dict) or spec.get("status") not in RATIFIED or rid not in IMPLEMENTED + ("H8",):
+        if not isinstance(spec, dict) or not isinstance(spec.get("status"), (str, type(None))):
+            bad.append("each rule must be an object with a text status")
+            continue
+        if not isinstance(spec.get("params", {}), (dict, type(None))):
+            bad.append("rule parameters must be an object")
+            continue
+        if spec.get("status") not in RATIFIED or rid not in IMPLEMENTED + ("H8",):
             continue
         p = spec.get("params") or {}
         isint = lambda v: isinstance(v, int) and not isinstance(v, bool)
@@ -66,7 +74,7 @@ def validate_rules(rules):
             if mb is not None and (not isinstance(mb, dict) or set(mb) - set(BANDS) or
                                    any(v is not None and (not isint(v) or v < 0) for v in mb.values())):
                 bad.append("H1 min_rn_by_band must map bands %s to whole numbers >= 0 (got %r)" % ("/".join(BANDS), mb))
-            if p.get("charge_counts_toward_h1") not in (None, True, False):
+            if p.get("charge_counts_toward_h1") is not None and not isinstance(p["charge_counts_toward_h1"], bool):
                 bad.append("H1 charge_counts_toward_h1 must be true or false")
             pol = p.get("missing_band_policy")
             if pol is not None and pol not in ("skip", "refuse") + BANDS:
@@ -77,10 +85,10 @@ def validate_rules(rules):
                 bad.append("H4 allowed_exceptions must be a list of names")
         elif rid == "H5":
             r = p.get("min_rest_hours")
-            if r is not None and (not isinstance(r, (int, float)) or isinstance(r, bool) or r < 0):
-                bad.append("H5 min_rest_hours must be a number >= 0 (got %r)" % (r,))
+            if r is not None and (not isinstance(r, (int, float)) or isinstance(r, bool) or r < 0 or (isinstance(r, float) and not math.isfinite(r))):
+                bad.append("H5 min_rest_hours must be a finite number >= 0 (got %r)" % (r,))
             for k in ("boundary_inclusive", "day_after_night_forbidden"):
-                if p.get(k) not in (None, True, False):
+                if p.get(k) is not None and not isinstance(p[k], bool):
                     bad.append("H5 %s must be true or false" % k)
         elif rid == "H6":
             m = p.get("max_consecutive_shifts")
@@ -93,7 +101,7 @@ def validate_rules(rules):
             if ns is not None and (not isinstance(ns, list) or not all(isinstance(x, str) for x in ns)):
                 bad.append("H9 not_separate_places must be a list of place names")
         elif rid == "H8":
-            if p.get("pairing_required") not in (None, True, False):
+            if p.get("pairing_required") is not None and not isinstance(p["pairing_required"], bool):
                 bad.append("H8 pairing_required must be true or false")
     return bad
 REQUIRED = {"H1": ("min_rn_by_band", "charge_counts_toward_h1", "missing_band_policy"), "H2": (),
@@ -119,33 +127,53 @@ def validate_input(r):
     """Refuse anything that is not a synthetic, token-only roster in the contract shape."""
     if not isinstance(r, dict):
         raise InputRefused("input is not a JSON object")
-    if (r.get("provenance") or {}).get("synthetic") is not True:
+    if not isinstance(r.get("provenance"), dict) or r["provenance"].get("synthetic") is not True:
         raise InputRefused("provenance.synthetic is not true: only synthetic rosters are accepted (fence F1)")
     for k in ("staff", "shifts", "dates", "assignments"):
         if not isinstance(r.get(k), list):
             raise InputRefused(f"'{k}' must be a list")
     staff_ids = set()
     for s in r["staff"]:
-        if not isinstance(s, dict) or not STAFF_RE.match(str(s.get("staff_id", ""))):
+        if not isinstance(s, dict) or not isinstance(s.get("staff_id"), str) or not STAFF_RE.fullmatch(s["staff_id"]):
             raise InputRefused(f"staff_id {s.get('staff_id') if isinstance(s, dict) else s!r} is not a token like S01 "
                                "(S01-S999; names and employee IDs are refused)")
+        if s["staff_id"] in staff_ids:
+            raise InputRefused("duplicate staff_id")
+        if not isinstance(s.get("role"), str) or not isinstance(s.get("qualifications", []), list) or not all(isinstance(q, str) for q in s.get("qualifications", [])):
+            raise InputRefused("staff role must be text and qualifications a list of text")
+        if s.get("orientee") is not None and not isinstance(s["orientee"], bool):
+            raise InputRefused("orientee must be true or false")
+        if s.get("preceptor") is not None and not isinstance(s["preceptor"], str):
+            raise InputRefused("preceptor must be a staff token or null")
         staff_ids.add(s["staff_id"])
     for d in r["dates"]:
-        if not DATE_RE.match(str(d)):
+        if not isinstance(d, str) or not DATE_RE.fullmatch(d):
             raise InputRefused(f"date {d!r} is not a day index like D01 (D01-D999; calendar dates are refused)")
+    if len(set(r["dates"])) != len(r["dates"]):
+        raise InputRefused("duplicate date token")
     shifts = {}
     for sh in r["shifts"]:
-        if not (isinstance(sh, dict) and isinstance(sh.get("start_hour"), int) and isinstance(sh.get("end_hour"), int)
-                and 0 <= sh["start_hour"] < 24 and 0 <= sh["end_hour"] < 24 and sh.get("shift")):
+        if not (isinstance(sh, dict) and type(sh.get("start_hour")) is int and type(sh.get("end_hour")) is int
+                and 0 <= sh["start_hour"] < 24 and 0 <= sh["end_hour"] < 24 and isinstance(sh.get("shift"), str)
+                and re.fullmatch(r"[A-Za-z][A-Za-z0-9_-]{0,31}", sh["shift"])):
             raise InputRefused(f"bad shift definition {sh!r}")
+        if sh["shift"] in shifts:
+            raise InputRefused("duplicate shift token")
         shifts[sh["shift"]] = sh
     dates = set(r["dates"])
     for key in ("assignments", "availability", "context"):
+        if r.get(key) is not None and not isinstance(r[key], list):
+            raise InputRefused(f"{key} must be a list")
         for a in r.get(key) or []:
+            if not isinstance(a, dict) or not isinstance(a.get("date"), str) or not isinstance(a.get("shift"), str):
+                raise InputRefused(f"{key} entries must be objects with text date and shift tokens")
             if a.get("date") not in dates or a.get("shift") not in shifts:
                 raise InputRefused(f"{key} entry {a!r} names an unknown date or shift")
-            if key != "context" and a.get("staff_id") not in staff_ids:
+            if key != "context" and (not isinstance(a.get("staff_id"), str) or a["staff_id"] not in staff_ids):
                 raise InputRefused(f"{key} entry {a!r} names an unknown staff_id")
+            for field in ("place", "exception", "status", "census_band"):
+                if a.get(field) is not None and not isinstance(a[field], str):
+                    raise InputRefused(f"{key}.{field} must be text or null")
     return shifts
 
 
@@ -175,7 +203,7 @@ def _abs_hours(date, sh):
 
 def detect(roster, rules):
     """Return the run envelope. Never raises for a refused input: that is run_status ERROR."""
-    env = {"detector_version": DETECTOR_VERSION, "rules_source": rules.get("source"), "rules_sha256": sha(rules),
+    env = {"detector_version": DETECTOR_VERSION, "rules_source": rules.get("source") if isinstance(rules, dict) else None, "rules_sha256": sha(rules),
            "input_sha256": sha(roster) if roster is not None else None, "rules_evaluated": [], "rules_skipped": [],
            "findings": [], "input_notes": []}
     if roster is None:
@@ -245,7 +273,7 @@ def detect(roster, rules):
     for rid in NOT_IMPLEMENTED:
         spec = (rules.get("rules") or {}).get(rid) or {}
         iface = INTERFACE_ONLY[rid]
-        if spec.get("status") in RATIFIED and rid == "H8" and spec.get("params", {}).get("pairing_required") is not None \
+        if spec.get("status") in RATIFIED and rid == "H8" and (spec.get("params") or {}).get("pairing_required") is not None \
                 and any(s.get("orientee") for s in roster["staff"]):
             h8 = True   # R7: HYPOTHETICAL branch, runs only when ratified and the roster marks orientees
             env["rules_evaluated"].append("H8")
@@ -399,7 +427,12 @@ def main(argv=None):
     env = detect(roster, rules)
     text = json.dumps(env, indent=1, sort_keys=True, ensure_ascii=False)
     if a.out:
-        open(a.out, "w", encoding="utf-8", newline="\n").write(text + "\n")   # 1.2 (T2-W01): LF on every OS
+        try:
+            with open(a.out, "x", encoding="utf-8", newline="\n") as f:
+                f.write(text + "\n")
+        except FileExistsError:
+            print("REFUSED: output already exists; choose a new file", file=sys.stderr)
+            return 2
     print(text)
     return {"COMPLETED": 0, "NOT_RUN": 3, "ERROR": 2}[env["run_status"]]
 

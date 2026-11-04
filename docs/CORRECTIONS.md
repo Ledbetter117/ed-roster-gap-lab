@@ -1,5 +1,7 @@
 # Correction record — portable release 0.1.0
 
+Later file-safety, input-validation, optional-dependency and workflow corrections are recorded in [SECURITY-AUDIT.md](SECURITY-AUDIT.md). The table below preserves the v0.1.0 engineering history.
+
 The installed October/November workbench remains preserved. This edition makes focused corrections in a separate public source tree.
 
 | Issue | Previous behavior | This edition | Evidence |

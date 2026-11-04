@@ -1,2 +1,4 @@
-# Optional PDF renderer only. Core software uses the Python standard library.
+# Optional PDF renderer only; Python 3.11+. Core software stays standard-library Python 3.10+.
 reportlab==4.4.9
+pillow==13.0.0
+charset-normalizer==3.5.2

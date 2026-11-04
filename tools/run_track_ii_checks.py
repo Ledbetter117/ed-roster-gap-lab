@@ -8,7 +8,7 @@ Usage: python -B run_track_ii_checks.py <kit> <out>"""
 import hashlib, json, os, re, shutil, subprocess, sys, tempfile, time
 from pathlib import Path
 
-SUITES = ["test_gapcheck.py", "test_measure.py", "test_gapcheck_r12.py", "test_release.py"]
+SUITES = ["test_gapcheck.py", "test_measure.py", "test_gapcheck_r12.py", "test_release.py", "test_security.py"]
 MUTATIONS = ["mutation_gapcheck.py", "mutation_measure.py", "mutation_gapcheck_r12.py"]
 
 
@@ -35,7 +35,8 @@ def main():
         for s in SUITES:
             code, text, secs = run([sys.executable, "-B", str(root / "tests" / s), str(root)], root, out / ("%s-%s.log" % (s[:-3], tag)))
             m = re.findall(r"(\d+) PASS · (\d+) FAIL", text)
-            res["suites"][s] = {"exit": code, "seconds": secs, "pass": int(m[-1][0]) if m else None, "fail": int(m[-1][1]) if m else None}
+            res["suites"][s] = {"exit": code, "seconds": secs, "pass": int(m[-1][0]) if m else None, "fail": int(m[-1][1]) if m else None,
+                                "unverified": [line for line in text.splitlines() if line.startswith("UNVERIFIED ")]}
         for s in MUTATIONS:
             jo = tmp / ("%s.json" % s[:-3])
             code, text, secs = run([sys.executable, "-B", str(root / "tests" / s), str(root), str(tmp / ("scr-" + s[:-3])), str(jo)], root,

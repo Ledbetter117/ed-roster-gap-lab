@@ -1,5 +1,7 @@
 # Manuscript provenance report
 
+**Version boundary:** this report and the manuscript/PDF are the preserved v0.1.0 numerical-evidence snapshot. References to current code/checks below mean the code at that recorded release. Later security corrections have separate evidence in `docs/SECURITY-AUDIT.md`; this historical report does not certify their changed bytes.
+
 Manuscript: `paper/MANUSCRIPT.md`. Audit date: 3 November 2026 (local). Codebase: this portable release. Companion source/claims review: a separate reviewer; final disposition is recorded by the release owner.
 
 ## Provenance summary
